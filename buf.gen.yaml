@@ -1,0 +1,28 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  # базовые Go-structs
+  - plugin: buf.build/protocolbuffers/go:v1.33.0
+    out: gen/go
+    opt: paths=source_relative
+  # серверы и клиенты Connect для Go
+  - plugin: buf.build/connectrpc/go:v1.16.1
+    out: gen/go
+    opt: paths=source_relative
+
+  # базовые классы C#
+  - plugin: buf.build/protocolbuffers/csharp:v26.1
+    out: gen/csharp
+  # клиенты и серверы для ASP.NET
+  - plugin: buf.build/grpc/csharp:v1.62.0
+    out: gen/csharp
+
+  # TS типы
+  - plugin: buf.build/bufbuild/es:v1.7.2
+    out: gen/ts
+    opt: target=ts
+  # клиенты для фронтенда
+  - plugin: buf.build/connectrpc/es:v1.4.0
+    out: gen/ts
+    opt: target=ts

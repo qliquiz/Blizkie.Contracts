@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package blizkie.auth.v1;
+
+option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/auth/v1;authv1";
+
+service AuthService {
+  // mobile
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  // internal
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+}
+
+message RegisterRequest {
+  string phone = 1;
+  string password = 2;
+  string full_name = 3;
+}
+
+message RegisterResponse {
+  string user_id = 1;
+}
+
+message LoginRequest {
+  string phone = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message ValidateTokenRequest {
+  string access_token = 1;
+}
+
+message ValidateTokenResponse {
+  bool is_valid = 1;
+  string user_id = 2;
+  // в будущем добавим family_id
+}

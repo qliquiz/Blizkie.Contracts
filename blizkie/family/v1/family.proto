@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package blizkie.family.v1;
+
+option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/family/v1;familyv1";
+
+service FamilyService {
+  rpc CreateFamily(CreateFamilyRequest) returns (CreateFamilyResponse);
+  rpc GetMyFamily(GetMyFamilyRequest) returns (GetMyFamilyResponse);
+  rpc GenerateInviteCode(GenerateInviteCodeRequest) returns (GenerateInviteCodeResponse);
+}
+
+enum FamilyRole {
+  FAMILY_ROLE_UNSPECIFIED = 0;
+  FAMILY_ROLE_OWNER = 1;
+  FAMILY_ROLE_ADULT = 2;
+  FAMILY_ROLE_CHILD = 3;
+}
+
+message CreateFamilyRequest {
+  string family_name = 1;
+  // user_id здесь нет, берётся из JWT токена
+}
+
+message CreateFamilyResponse {
+  string family_id = 1;
+}
+
+message GetMyFamilyRequest {
+  // пустой запрос. опять же, кто просит - узнаем из токена
+}
+
+message GetMyFamilyResponse {
+  string family_id = 1;
+  string name = 2;
+  repeated Member members = 3; // массив участников
+}
+
+message Member {
+  string user_id = 1;
+  string display_name = 2;
+  FamilyRole role = 3;
+}
+
+message GenerateInviteCodeRequest {
+  string family_id = 1;
+}
+
+message GenerateInviteCodeResponse {
+  string code = 1;
+}
