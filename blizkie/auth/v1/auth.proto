@@ -2,14 +2,33 @@ syntax = "proto3";
 
 package blizkie.auth.v1;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/auth/v1;authv1";
 
 service AuthService {
   // mobile
-  rpc Register(RegisterRequest) returns (RegisterResponse);
-  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc Register(RegisterRequest) returns (RegisterResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/register"
+      body: "*"
+    };
+  }
+  
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/login"
+      body: "*"
+    };
+  }
+
   // internal
-  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse) {
+    option (google.api.http) = {
+      post: "/api/internal/auth/validate"
+      body: "*"
+    };
+  }
 }
 
 message RegisterRequest {

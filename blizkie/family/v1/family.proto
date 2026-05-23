@@ -2,12 +2,29 @@ syntax = "proto3";
 
 package blizkie.family.v1;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/family/v1;familyv1";
 
 service FamilyService {
-  rpc CreateFamily(CreateFamilyRequest) returns (CreateFamilyResponse);
-  rpc GetMyFamily(GetMyFamilyRequest) returns (GetMyFamilyResponse);
-  rpc GenerateInviteCode(GenerateInviteCodeRequest) returns (GenerateInviteCodeResponse);
+  rpc CreateFamily(CreateFamilyRequest) returns (CreateFamilyResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/families"
+      body: "*"
+    };
+  }
+  
+  rpc GetMyFamily(GetMyFamilyRequest) returns (GetMyFamilyResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/families/my"
+    };
+  }
+  
+  rpc GenerateInviteCode(GenerateInviteCodeRequest) returns (GenerateInviteCodeResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/families/{family_id}/invite-code"
+    };
+  }
 }
 
 enum FamilyRole {
