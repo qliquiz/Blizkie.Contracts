@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package blizkie.user.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/user/v1;userv1";
+
+service UserService {
+  rpc SyncUser(SyncUserRequest) returns (SyncUserResponse) {
+    option (google.api.http) = {
+      post: "/api/internal/users/sync"
+      body: "*"
+    };
+  }
+}
+
+message SyncUserRequest {
+  string user_id = 1;
+  string phone = 2;
+  string full_name = 3;
+}
+
+message SyncUserResponse {
+  string message = 1;
+}
