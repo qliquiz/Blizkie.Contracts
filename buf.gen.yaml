@@ -1,25 +1,25 @@
 version: v1
+managed:
+  enabled: true
 plugins:
-  # Go
-  - name: go
+  # === Go (Auth & Messenger) ===
+  - plugin: buf.build/protocolbuffers/go:v1.34.1
+    out: gen/go
+    opt: paths=source_relative
+  - plugin: buf.build/connectrpc/go:v1.16.1
     out: gen/go
     opt: paths=source_relative
 
-  - name: connect-go
-    out: gen/go
-    opt: paths=source_relative
-
-  # C#
-  - name: csharp
+  # === C# (Core Service) ===
+  - plugin: buf.build/protocolbuffers/csharp:v26.1
+    out: gen/csharp
+  - plugin: buf.build/grpc/csharp:v1.62.0
     out: gen/csharp
 
-  # TS
-  - name: es
-    path: ./node_modules/.bin/protoc-gen-es
+  # === TypeScript (React Native) ===
+  - plugin: buf.build/bufbuild/es:v1.9.0
     out: gen/ts
     opt: target=ts
-
-  - name: connect-es
-    path: ./node_modules/.bin/protoc-gen-connect-es
+  - plugin: buf.build/connectrpc/es:v1.4.0
     out: gen/ts
     opt: target=ts

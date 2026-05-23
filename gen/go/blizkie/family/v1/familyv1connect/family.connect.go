@@ -44,6 +44,14 @@ const (
 	FamilyServiceGenerateInviteCodeProcedure = "/blizkie.family.v1.FamilyService/GenerateInviteCode"
 )
 
+// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
+var (
+	familyServiceServiceDescriptor                  = v1.File_blizkie_family_v1_family_proto.Services().ByName("FamilyService")
+	familyServiceCreateFamilyMethodDescriptor       = familyServiceServiceDescriptor.Methods().ByName("CreateFamily")
+	familyServiceGetMyFamilyMethodDescriptor        = familyServiceServiceDescriptor.Methods().ByName("GetMyFamily")
+	familyServiceGenerateInviteCodeMethodDescriptor = familyServiceServiceDescriptor.Methods().ByName("GenerateInviteCode")
+)
+
 // FamilyServiceClient is a client for the blizkie.family.v1.FamilyService service.
 type FamilyServiceClient interface {
 	CreateFamily(context.Context, *connect.Request[v1.CreateFamilyRequest]) (*connect.Response[v1.CreateFamilyResponse], error)
@@ -60,24 +68,23 @@ type FamilyServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewFamilyServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) FamilyServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
-	familyServiceMethods := v1.File_blizkie_family_v1_family_proto.Services().ByName("FamilyService").Methods()
 	return &familyServiceClient{
 		createFamily: connect.NewClient[v1.CreateFamilyRequest, v1.CreateFamilyResponse](
 			httpClient,
 			baseURL+FamilyServiceCreateFamilyProcedure,
-			connect.WithSchema(familyServiceMethods.ByName("CreateFamily")),
+			connect.WithSchema(familyServiceCreateFamilyMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		getMyFamily: connect.NewClient[v1.GetMyFamilyRequest, v1.GetMyFamilyResponse](
 			httpClient,
 			baseURL+FamilyServiceGetMyFamilyProcedure,
-			connect.WithSchema(familyServiceMethods.ByName("GetMyFamily")),
+			connect.WithSchema(familyServiceGetMyFamilyMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		generateInviteCode: connect.NewClient[v1.GenerateInviteCodeRequest, v1.GenerateInviteCodeResponse](
 			httpClient,
 			baseURL+FamilyServiceGenerateInviteCodeProcedure,
-			connect.WithSchema(familyServiceMethods.ByName("GenerateInviteCode")),
+			connect.WithSchema(familyServiceGenerateInviteCodeMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -118,23 +125,22 @@ type FamilyServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewFamilyServiceHandler(svc FamilyServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
-	familyServiceMethods := v1.File_blizkie_family_v1_family_proto.Services().ByName("FamilyService").Methods()
 	familyServiceCreateFamilyHandler := connect.NewUnaryHandler(
 		FamilyServiceCreateFamilyProcedure,
 		svc.CreateFamily,
-		connect.WithSchema(familyServiceMethods.ByName("CreateFamily")),
+		connect.WithSchema(familyServiceCreateFamilyMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	familyServiceGetMyFamilyHandler := connect.NewUnaryHandler(
 		FamilyServiceGetMyFamilyProcedure,
 		svc.GetMyFamily,
-		connect.WithSchema(familyServiceMethods.ByName("GetMyFamily")),
+		connect.WithSchema(familyServiceGetMyFamilyMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	familyServiceGenerateInviteCodeHandler := connect.NewUnaryHandler(
 		FamilyServiceGenerateInviteCodeProcedure,
 		svc.GenerateInviteCode,
-		connect.WithSchema(familyServiceMethods.ByName("GenerateInviteCode")),
+		connect.WithSchema(familyServiceGenerateInviteCodeMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/blizkie.family.v1.FamilyService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

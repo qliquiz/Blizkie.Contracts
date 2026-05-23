@@ -40,9 +40,11 @@ namespace Blizkie.Auth.V1 {
             "Eh0uYmxpemtpZS5hdXRoLnYxLkxvZ2luUmVxdWVzdBoeLmJsaXpraWUuYXV0",
             "aC52MS5Mb2dpblJlc3BvbnNlEl4KDVZhbGlkYXRlVG9rZW4SJS5ibGl6a2ll",
             "LmF1dGgudjEuVmFsaWRhdGVUb2tlblJlcXVlc3QaJi5ibGl6a2llLmF1dGgu",
-            "djEuVmFsaWRhdGVUb2tlblJlc3BvbnNlQjxaOmdpdGh1Yi5jb20vcWxpcXVp",
-            "ei9ibGl6a2llLWNvbnRyYWN0cy9nZW4vZ28vYXV0aC92MTthdXRodjFiBnBy",
-            "b3RvMw=="));
+            "djEuVmFsaWRhdGVUb2tlblJlc3BvbnNlQroBChNjb20uYmxpemtpZS5hdXRo",
+            "LnYxQglBdXRoUHJvdG9QAVo6Z2l0aHViLmNvbS9xbGlxdWl6L2JsaXpraWUt",
+            "Y29udHJhY3RzL2dlbi9nby9hdXRoL3YxO2F1dGh2MaICA0JBWKoCD0JsaXpr",
+            "aWUuQXV0aC5WMcoCD0JsaXpraWVcQXV0aFxWMeICG0JsaXpraWVcQXV0aFxW",
+            "MVxHUEJNZXRhZGF0YeoCEUJsaXpraWU6OkF1dGg6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -272,11 +274,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -303,11 +301,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -486,11 +480,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -509,11 +499,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -713,11 +699,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -740,11 +722,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -948,11 +926,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -975,11 +949,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1154,11 +1124,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1177,11 +1143,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1384,11 +1346,7 @@ namespace Blizkie.Auth.V1 {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1411,11 +1369,7 @@ namespace Blizkie.Auth.V1 {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;

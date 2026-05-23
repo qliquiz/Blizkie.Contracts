@@ -42,6 +42,14 @@ const (
 	AuthServiceValidateTokenProcedure = "/blizkie.auth.v1.AuthService/ValidateToken"
 )
 
+// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
+var (
+	authServiceServiceDescriptor             = v1.File_blizkie_auth_v1_auth_proto.Services().ByName("AuthService")
+	authServiceRegisterMethodDescriptor      = authServiceServiceDescriptor.Methods().ByName("Register")
+	authServiceLoginMethodDescriptor         = authServiceServiceDescriptor.Methods().ByName("Login")
+	authServiceValidateTokenMethodDescriptor = authServiceServiceDescriptor.Methods().ByName("ValidateToken")
+)
+
 // AuthServiceClient is a client for the blizkie.auth.v1.AuthService service.
 type AuthServiceClient interface {
 	// mobile
@@ -60,24 +68,23 @@ type AuthServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewAuthServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) AuthServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
-	authServiceMethods := v1.File_blizkie_auth_v1_auth_proto.Services().ByName("AuthService").Methods()
 	return &authServiceClient{
 		register: connect.NewClient[v1.RegisterRequest, v1.RegisterResponse](
 			httpClient,
 			baseURL+AuthServiceRegisterProcedure,
-			connect.WithSchema(authServiceMethods.ByName("Register")),
+			connect.WithSchema(authServiceRegisterMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		login: connect.NewClient[v1.LoginRequest, v1.LoginResponse](
 			httpClient,
 			baseURL+AuthServiceLoginProcedure,
-			connect.WithSchema(authServiceMethods.ByName("Login")),
+			connect.WithSchema(authServiceLoginMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		validateToken: connect.NewClient[v1.ValidateTokenRequest, v1.ValidateTokenResponse](
 			httpClient,
 			baseURL+AuthServiceValidateTokenProcedure,
-			connect.WithSchema(authServiceMethods.ByName("ValidateToken")),
+			connect.WithSchema(authServiceValidateTokenMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -120,23 +127,22 @@ type AuthServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewAuthServiceHandler(svc AuthServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
-	authServiceMethods := v1.File_blizkie_auth_v1_auth_proto.Services().ByName("AuthService").Methods()
 	authServiceRegisterHandler := connect.NewUnaryHandler(
 		AuthServiceRegisterProcedure,
 		svc.Register,
-		connect.WithSchema(authServiceMethods.ByName("Register")),
+		connect.WithSchema(authServiceRegisterMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	authServiceLoginHandler := connect.NewUnaryHandler(
 		AuthServiceLoginProcedure,
 		svc.Login,
-		connect.WithSchema(authServiceMethods.ByName("Login")),
+		connect.WithSchema(authServiceLoginMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	authServiceValidateTokenHandler := connect.NewUnaryHandler(
 		AuthServiceValidateTokenProcedure,
 		svc.ValidateToken,
-		connect.WithSchema(authServiceMethods.ByName("ValidateToken")),
+		connect.WithSchema(authServiceValidateTokenMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/blizkie.auth.v1.AuthService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
