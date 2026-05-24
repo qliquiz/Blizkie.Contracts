@@ -57,6 +57,10 @@ namespace Blizkie.Family.V1 {
     static readonly grpc::Marshaller<global::Blizkie.Family.V1.GenerateInviteCodeRequest> __Marshaller_blizkie_family_v1_GenerateInviteCodeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.GenerateInviteCodeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.Family.V1.GenerateInviteCodeResponse> __Marshaller_blizkie_family_v1_GenerateInviteCodeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.GenerateInviteCodeResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.JoinFamilyRequest> __Marshaller_blizkie_family_v1_JoinFamilyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.JoinFamilyRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.JoinFamilyResponse> __Marshaller_blizkie_family_v1_JoinFamilyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.JoinFamilyResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Blizkie.Family.V1.CreateFamilyRequest, global::Blizkie.Family.V1.CreateFamilyResponse> __Method_CreateFamily = new grpc::Method<global::Blizkie.Family.V1.CreateFamilyRequest, global::Blizkie.Family.V1.CreateFamilyResponse>(
@@ -82,6 +86,14 @@ namespace Blizkie.Family.V1 {
         __Marshaller_blizkie_family_v1_GenerateInviteCodeRequest,
         __Marshaller_blizkie_family_v1_GenerateInviteCodeResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.JoinFamilyRequest, global::Blizkie.Family.V1.JoinFamilyResponse> __Method_JoinFamily = new grpc::Method<global::Blizkie.Family.V1.JoinFamilyRequest, global::Blizkie.Family.V1.JoinFamilyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "JoinFamily",
+        __Marshaller_blizkie_family_v1_JoinFamilyRequest,
+        __Marshaller_blizkie_family_v1_JoinFamilyResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -106,6 +118,12 @@ namespace Blizkie.Family.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.GenerateInviteCodeResponse> GenerateInviteCode(global::Blizkie.Family.V1.GenerateInviteCodeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.JoinFamilyResponse> JoinFamily(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -199,6 +217,26 @@ namespace Blizkie.Family.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GenerateInviteCode, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.JoinFamilyResponse JoinFamily(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return JoinFamily(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.JoinFamilyResponse JoinFamily(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_JoinFamily, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.JoinFamilyResponse> JoinFamilyAsync(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return JoinFamilyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.JoinFamilyResponse> JoinFamilyAsync(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_JoinFamily, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override FamilyServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -215,7 +253,8 @@ namespace Blizkie.Family.V1 {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateFamily, serviceImpl.CreateFamily)
           .AddMethod(__Method_GetMyFamily, serviceImpl.GetMyFamily)
-          .AddMethod(__Method_GenerateInviteCode, serviceImpl.GenerateInviteCode).Build();
+          .AddMethod(__Method_GenerateInviteCode, serviceImpl.GenerateInviteCode)
+          .AddMethod(__Method_JoinFamily, serviceImpl.JoinFamily).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -228,6 +267,7 @@ namespace Blizkie.Family.V1 {
       serviceBinder.AddMethod(__Method_CreateFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.CreateFamilyRequest, global::Blizkie.Family.V1.CreateFamilyResponse>(serviceImpl.CreateFamily));
       serviceBinder.AddMethod(__Method_GetMyFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.GetMyFamilyRequest, global::Blizkie.Family.V1.GetMyFamilyResponse>(serviceImpl.GetMyFamily));
       serviceBinder.AddMethod(__Method_GenerateInviteCode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.GenerateInviteCodeRequest, global::Blizkie.Family.V1.GenerateInviteCodeResponse>(serviceImpl.GenerateInviteCode));
+      serviceBinder.AddMethod(__Method_JoinFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.JoinFamilyRequest, global::Blizkie.Family.V1.JoinFamilyResponse>(serviceImpl.JoinFamily));
     }
 
   }

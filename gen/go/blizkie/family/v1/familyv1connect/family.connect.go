@@ -42,6 +42,9 @@ const (
 	// FamilyServiceGenerateInviteCodeProcedure is the fully-qualified name of the FamilyService's
 	// GenerateInviteCode RPC.
 	FamilyServiceGenerateInviteCodeProcedure = "/blizkie.family.v1.FamilyService/GenerateInviteCode"
+	// FamilyServiceJoinFamilyProcedure is the fully-qualified name of the FamilyService's JoinFamily
+	// RPC.
+	FamilyServiceJoinFamilyProcedure = "/blizkie.family.v1.FamilyService/JoinFamily"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
@@ -50,6 +53,7 @@ var (
 	familyServiceCreateFamilyMethodDescriptor       = familyServiceServiceDescriptor.Methods().ByName("CreateFamily")
 	familyServiceGetMyFamilyMethodDescriptor        = familyServiceServiceDescriptor.Methods().ByName("GetMyFamily")
 	familyServiceGenerateInviteCodeMethodDescriptor = familyServiceServiceDescriptor.Methods().ByName("GenerateInviteCode")
+	familyServiceJoinFamilyMethodDescriptor         = familyServiceServiceDescriptor.Methods().ByName("JoinFamily")
 )
 
 // FamilyServiceClient is a client for the blizkie.family.v1.FamilyService service.
@@ -57,6 +61,7 @@ type FamilyServiceClient interface {
 	CreateFamily(context.Context, *connect.Request[v1.CreateFamilyRequest]) (*connect.Response[v1.CreateFamilyResponse], error)
 	GetMyFamily(context.Context, *connect.Request[v1.GetMyFamilyRequest]) (*connect.Response[v1.GetMyFamilyResponse], error)
 	GenerateInviteCode(context.Context, *connect.Request[v1.GenerateInviteCodeRequest]) (*connect.Response[v1.GenerateInviteCodeResponse], error)
+	JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error)
 }
 
 // NewFamilyServiceClient constructs a client for the blizkie.family.v1.FamilyService service. By
@@ -87,6 +92,12 @@ func NewFamilyServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(familyServiceGenerateInviteCodeMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		joinFamily: connect.NewClient[v1.JoinFamilyRequest, v1.JoinFamilyResponse](
+			httpClient,
+			baseURL+FamilyServiceJoinFamilyProcedure,
+			connect.WithSchema(familyServiceJoinFamilyMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -95,6 +106,7 @@ type familyServiceClient struct {
 	createFamily       *connect.Client[v1.CreateFamilyRequest, v1.CreateFamilyResponse]
 	getMyFamily        *connect.Client[v1.GetMyFamilyRequest, v1.GetMyFamilyResponse]
 	generateInviteCode *connect.Client[v1.GenerateInviteCodeRequest, v1.GenerateInviteCodeResponse]
+	joinFamily         *connect.Client[v1.JoinFamilyRequest, v1.JoinFamilyResponse]
 }
 
 // CreateFamily calls blizkie.family.v1.FamilyService.CreateFamily.
@@ -112,11 +124,17 @@ func (c *familyServiceClient) GenerateInviteCode(ctx context.Context, req *conne
 	return c.generateInviteCode.CallUnary(ctx, req)
 }
 
+// JoinFamily calls blizkie.family.v1.FamilyService.JoinFamily.
+func (c *familyServiceClient) JoinFamily(ctx context.Context, req *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error) {
+	return c.joinFamily.CallUnary(ctx, req)
+}
+
 // FamilyServiceHandler is an implementation of the blizkie.family.v1.FamilyService service.
 type FamilyServiceHandler interface {
 	CreateFamily(context.Context, *connect.Request[v1.CreateFamilyRequest]) (*connect.Response[v1.CreateFamilyResponse], error)
 	GetMyFamily(context.Context, *connect.Request[v1.GetMyFamilyRequest]) (*connect.Response[v1.GetMyFamilyResponse], error)
 	GenerateInviteCode(context.Context, *connect.Request[v1.GenerateInviteCodeRequest]) (*connect.Response[v1.GenerateInviteCodeResponse], error)
+	JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error)
 }
 
 // NewFamilyServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -143,6 +161,12 @@ func NewFamilyServiceHandler(svc FamilyServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(familyServiceGenerateInviteCodeMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	familyServiceJoinFamilyHandler := connect.NewUnaryHandler(
+		FamilyServiceJoinFamilyProcedure,
+		svc.JoinFamily,
+		connect.WithSchema(familyServiceJoinFamilyMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/blizkie.family.v1.FamilyService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case FamilyServiceCreateFamilyProcedure:
@@ -151,6 +175,8 @@ func NewFamilyServiceHandler(svc FamilyServiceHandler, opts ...connect.HandlerOp
 			familyServiceGetMyFamilyHandler.ServeHTTP(w, r)
 		case FamilyServiceGenerateInviteCodeProcedure:
 			familyServiceGenerateInviteCodeHandler.ServeHTTP(w, r)
+		case FamilyServiceJoinFamilyProcedure:
+			familyServiceJoinFamilyHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -170,4 +196,8 @@ func (UnimplementedFamilyServiceHandler) GetMyFamily(context.Context, *connect.R
 
 func (UnimplementedFamilyServiceHandler) GenerateInviteCode(context.Context, *connect.Request[v1.GenerateInviteCodeRequest]) (*connect.Response[v1.GenerateInviteCodeResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.GenerateInviteCode is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.JoinFamily is not implemented"))
 }

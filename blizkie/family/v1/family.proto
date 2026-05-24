@@ -25,6 +25,13 @@ service FamilyService {
       post: "/api/v1/families/{family_id}/invite-code"
     };
   }
+
+  rpc JoinFamily(JoinFamilyRequest) returns (JoinFamilyResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/families/join"
+      body: "*"
+    };
+  }
 }
 
 enum FamilyRole {
@@ -65,4 +72,12 @@ message GenerateInviteCodeRequest {
 
 message GenerateInviteCodeResponse {
   string code = 1;
+}
+
+message JoinFamilyRequest {
+  string code = 1;
+}
+
+message JoinFamilyResponse {
+  string family_id = 1;
 }

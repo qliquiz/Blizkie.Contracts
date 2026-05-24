@@ -321,3 +321,77 @@ export class GenerateInviteCodeResponse extends Message<GenerateInviteCodeRespon
   }
 }
 
+/**
+ * @generated from message blizkie.family.v1.JoinFamilyRequest
+ */
+export class JoinFamilyRequest extends Message<JoinFamilyRequest> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  constructor(data?: PartialMessage<JoinFamilyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.JoinFamilyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinFamilyRequest {
+    return new JoinFamilyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinFamilyRequest {
+    return new JoinFamilyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinFamilyRequest {
+    return new JoinFamilyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinFamilyRequest | PlainMessage<JoinFamilyRequest> | undefined, b: JoinFamilyRequest | PlainMessage<JoinFamilyRequest> | undefined): boolean {
+    return proto3.util.equals(JoinFamilyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.JoinFamilyResponse
+ */
+export class JoinFamilyResponse extends Message<JoinFamilyResponse> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  constructor(data?: PartialMessage<JoinFamilyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.JoinFamilyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinFamilyResponse {
+    return new JoinFamilyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinFamilyResponse {
+    return new JoinFamilyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinFamilyResponse {
+    return new JoinFamilyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinFamilyResponse | PlainMessage<JoinFamilyResponse> | undefined, b: JoinFamilyResponse | PlainMessage<JoinFamilyResponse> | undefined): boolean {
+    return proto3.util.equals(JoinFamilyResponse, a, b);
+  }
+}
+

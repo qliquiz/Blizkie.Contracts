@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFamilyRequest, CreateFamilyResponse, GenerateInviteCodeRequest, GenerateInviteCodeResponse, GetMyFamilyRequest, GetMyFamilyResponse } from "./family_pb.js";
+import { CreateFamilyRequest, CreateFamilyResponse, GenerateInviteCodeRequest, GenerateInviteCodeResponse, GetMyFamilyRequest, GetMyFamilyResponse, JoinFamilyRequest, JoinFamilyResponse } from "./family_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -37,6 +37,15 @@ export const FamilyService = {
       name: "GenerateInviteCode",
       I: GenerateInviteCodeRequest,
       O: GenerateInviteCodeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.JoinFamily
+     */
+    joinFamily: {
+      name: "JoinFamily",
+      I: JoinFamilyRequest,
+      O: JoinFamilyResponse,
       kind: MethodKind.Unary,
     },
   }
