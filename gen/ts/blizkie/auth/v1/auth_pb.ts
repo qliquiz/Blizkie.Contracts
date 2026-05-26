@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
  * @generated from message blizkie.auth.v1.RegisterRequest
@@ -103,6 +103,8 @@ export class RegisterResponse extends Message<RegisterResponse> {
  */
 export class LoginRequest extends Message<LoginRequest> {
   /**
+   * Temporary login field: phone or email.
+   *
    * @generated from field: string phone = 1;
    */
   phone = "";
@@ -111,6 +113,11 @@ export class LoginRequest extends Message<LoginRequest> {
    * @generated from field: string password = 2;
    */
   password = "";
+
+  /**
+   * @generated from field: string device_id = 3;
+   */
+  deviceId = "";
 
   constructor(data?: PartialMessage<LoginRequest>) {
     super();
@@ -122,6 +129,7 @@ export class LoginRequest extends Message<LoginRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "phone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoginRequest {
@@ -181,6 +189,733 @@ export class LoginResponse extends Message<LoginResponse> {
 
   static equals(a: LoginResponse | PlainMessage<LoginResponse> | undefined, b: LoginResponse | PlainMessage<LoginResponse> | undefined): boolean {
     return proto3.util.equals(LoginResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RefreshTokenRequest
+ */
+export class RefreshTokenRequest extends Message<RefreshTokenRequest> {
+  /**
+   * @generated from field: string refresh_token = 1;
+   */
+  refreshToken = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<RefreshTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RefreshTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "refresh_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshTokenRequest {
+    return new RefreshTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshTokenRequest {
+    return new RefreshTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshTokenRequest {
+    return new RefreshTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshTokenRequest | PlainMessage<RefreshTokenRequest> | undefined, b: RefreshTokenRequest | PlainMessage<RefreshTokenRequest> | undefined): boolean {
+    return proto3.util.equals(RefreshTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RefreshTokenResponse
+ */
+export class RefreshTokenResponse extends Message<RefreshTokenResponse> {
+  /**
+   * @generated from field: string access_token = 1;
+   */
+  accessToken = "";
+
+  /**
+   * @generated from field: string refresh_token = 2;
+   */
+  refreshToken = "";
+
+  constructor(data?: PartialMessage<RefreshTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RefreshTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "access_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "refresh_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshTokenResponse {
+    return new RefreshTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshTokenResponse {
+    return new RefreshTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshTokenResponse {
+    return new RefreshTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshTokenResponse | PlainMessage<RefreshTokenResponse> | undefined, b: RefreshTokenResponse | PlainMessage<RefreshTokenResponse> | undefined): boolean {
+    return proto3.util.equals(RefreshTokenResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.LogoutRequest
+ */
+export class LogoutRequest extends Message<LogoutRequest> {
+  /**
+   * @generated from field: string refresh_token = 1;
+   */
+  refreshToken = "";
+
+  constructor(data?: PartialMessage<LogoutRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.LogoutRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "refresh_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogoutRequest {
+    return new LogoutRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogoutRequest {
+    return new LogoutRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogoutRequest {
+    return new LogoutRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LogoutRequest | PlainMessage<LogoutRequest> | undefined, b: LogoutRequest | PlainMessage<LogoutRequest> | undefined): boolean {
+    return proto3.util.equals(LogoutRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.LogoutResponse
+ */
+export class LogoutResponse extends Message<LogoutResponse> {
+  constructor(data?: PartialMessage<LogoutResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.LogoutResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogoutResponse {
+    return new LogoutResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogoutResponse {
+    return new LogoutResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogoutResponse {
+    return new LogoutResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LogoutResponse | PlainMessage<LogoutResponse> | undefined, b: LogoutResponse | PlainMessage<LogoutResponse> | undefined): boolean {
+    return proto3.util.equals(LogoutResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.LogoutAllRequest
+ */
+export class LogoutAllRequest extends Message<LogoutAllRequest> {
+  constructor(data?: PartialMessage<LogoutAllRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.LogoutAllRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogoutAllRequest {
+    return new LogoutAllRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogoutAllRequest {
+    return new LogoutAllRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogoutAllRequest {
+    return new LogoutAllRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LogoutAllRequest | PlainMessage<LogoutAllRequest> | undefined, b: LogoutAllRequest | PlainMessage<LogoutAllRequest> | undefined): boolean {
+    return proto3.util.equals(LogoutAllRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.LogoutAllResponse
+ */
+export class LogoutAllResponse extends Message<LogoutAllResponse> {
+  /**
+   * @generated from field: int32 sessions_revoked = 1;
+   */
+  sessionsRevoked = 0;
+
+  constructor(data?: PartialMessage<LogoutAllResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.LogoutAllResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sessions_revoked", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogoutAllResponse {
+    return new LogoutAllResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogoutAllResponse {
+    return new LogoutAllResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogoutAllResponse {
+    return new LogoutAllResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LogoutAllResponse | PlainMessage<LogoutAllResponse> | undefined, b: LogoutAllResponse | PlainMessage<LogoutAllResponse> | undefined): boolean {
+    return proto3.util.equals(LogoutAllResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.SessionInfo
+ */
+export class SessionInfo extends Message<SessionInfo> {
+  /**
+   * @generated from field: string session_id = 1;
+   */
+  sessionId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string user_agent = 3;
+   */
+  userAgent = "";
+
+  /**
+   * @generated from field: string ip_address = 4;
+   */
+  ipAddress = "";
+
+  /**
+   * @generated from field: int64 created_at = 5;
+   */
+  createdAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 last_used_at = 6;
+   */
+  lastUsedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<SessionInfo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.SessionInfo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_agent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ip_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "last_used_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionInfo {
+    return new SessionInfo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SessionInfo {
+    return new SessionInfo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SessionInfo {
+    return new SessionInfo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SessionInfo | PlainMessage<SessionInfo> | undefined, b: SessionInfo | PlainMessage<SessionInfo> | undefined): boolean {
+    return proto3.util.equals(SessionInfo, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ListSessionsRequest
+ */
+export class ListSessionsRequest extends Message<ListSessionsRequest> {
+  constructor(data?: PartialMessage<ListSessionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ListSessionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSessionsRequest {
+    return new ListSessionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSessionsRequest {
+    return new ListSessionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSessionsRequest {
+    return new ListSessionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSessionsRequest | PlainMessage<ListSessionsRequest> | undefined, b: ListSessionsRequest | PlainMessage<ListSessionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListSessionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ListSessionsResponse
+ */
+export class ListSessionsResponse extends Message<ListSessionsResponse> {
+  /**
+   * @generated from field: repeated blizkie.auth.v1.SessionInfo sessions = 1;
+   */
+  sessions: SessionInfo[] = [];
+
+  constructor(data?: PartialMessage<ListSessionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ListSessionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sessions", kind: "message", T: SessionInfo, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSessionsResponse {
+    return new ListSessionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSessionsResponse {
+    return new ListSessionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSessionsResponse {
+    return new ListSessionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSessionsResponse | PlainMessage<ListSessionsResponse> | undefined, b: ListSessionsResponse | PlainMessage<ListSessionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListSessionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RevokeSessionRequest
+ */
+export class RevokeSessionRequest extends Message<RevokeSessionRequest> {
+  /**
+   * @generated from field: string session_id = 1;
+   */
+  sessionId = "";
+
+  constructor(data?: PartialMessage<RevokeSessionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RevokeSessionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSessionRequest {
+    return new RevokeSessionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSessionRequest {
+    return new RevokeSessionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSessionRequest {
+    return new RevokeSessionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeSessionRequest | PlainMessage<RevokeSessionRequest> | undefined, b: RevokeSessionRequest | PlainMessage<RevokeSessionRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeSessionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RevokeSessionResponse
+ */
+export class RevokeSessionResponse extends Message<RevokeSessionResponse> {
+  constructor(data?: PartialMessage<RevokeSessionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RevokeSessionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSessionResponse {
+    return new RevokeSessionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSessionResponse {
+    return new RevokeSessionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSessionResponse {
+    return new RevokeSessionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeSessionResponse | PlainMessage<RevokeSessionResponse> | undefined, b: RevokeSessionResponse | PlainMessage<RevokeSessionResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeSessionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ChangePasswordRequest
+ */
+export class ChangePasswordRequest extends Message<ChangePasswordRequest> {
+  /**
+   * @generated from field: string current_password = 1;
+   */
+  currentPassword = "";
+
+  /**
+   * @generated from field: string new_password = 2;
+   */
+  newPassword = "";
+
+  /**
+   * @generated from field: string refresh_token = 3;
+   */
+  refreshToken = "";
+
+  constructor(data?: PartialMessage<ChangePasswordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ChangePasswordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "current_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "refresh_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangePasswordRequest {
+    return new ChangePasswordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangePasswordRequest {
+    return new ChangePasswordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangePasswordRequest {
+    return new ChangePasswordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangePasswordRequest | PlainMessage<ChangePasswordRequest> | undefined, b: ChangePasswordRequest | PlainMessage<ChangePasswordRequest> | undefined): boolean {
+    return proto3.util.equals(ChangePasswordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ChangePasswordResponse
+ */
+export class ChangePasswordResponse extends Message<ChangePasswordResponse> {
+  constructor(data?: PartialMessage<ChangePasswordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ChangePasswordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangePasswordResponse {
+    return new ChangePasswordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangePasswordResponse {
+    return new ChangePasswordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangePasswordResponse {
+    return new ChangePasswordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangePasswordResponse | PlainMessage<ChangePasswordResponse> | undefined, b: ChangePasswordResponse | PlainMessage<ChangePasswordResponse> | undefined): boolean {
+    return proto3.util.equals(ChangePasswordResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RequestPasswordResetRequest
+ */
+export class RequestPasswordResetRequest extends Message<RequestPasswordResetRequest> {
+  /**
+   * @generated from field: string email = 1;
+   */
+  email = "";
+
+  constructor(data?: PartialMessage<RequestPasswordResetRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RequestPasswordResetRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestPasswordResetRequest {
+    return new RequestPasswordResetRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestPasswordResetRequest {
+    return new RequestPasswordResetRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestPasswordResetRequest {
+    return new RequestPasswordResetRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestPasswordResetRequest | PlainMessage<RequestPasswordResetRequest> | undefined, b: RequestPasswordResetRequest | PlainMessage<RequestPasswordResetRequest> | undefined): boolean {
+    return proto3.util.equals(RequestPasswordResetRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.RequestPasswordResetResponse
+ */
+export class RequestPasswordResetResponse extends Message<RequestPasswordResetResponse> {
+  constructor(data?: PartialMessage<RequestPasswordResetResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.RequestPasswordResetResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestPasswordResetResponse {
+    return new RequestPasswordResetResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestPasswordResetResponse {
+    return new RequestPasswordResetResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestPasswordResetResponse {
+    return new RequestPasswordResetResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestPasswordResetResponse | PlainMessage<RequestPasswordResetResponse> | undefined, b: RequestPasswordResetResponse | PlainMessage<RequestPasswordResetResponse> | undefined): boolean {
+    return proto3.util.equals(RequestPasswordResetResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.VerifyResetCodeRequest
+ */
+export class VerifyResetCodeRequest extends Message<VerifyResetCodeRequest> {
+  /**
+   * @generated from field: string email = 1;
+   */
+  email = "";
+
+  /**
+   * @generated from field: string otp = 2;
+   */
+  otp = "";
+
+  constructor(data?: PartialMessage<VerifyResetCodeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.VerifyResetCodeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "otp", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyResetCodeRequest {
+    return new VerifyResetCodeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyResetCodeRequest {
+    return new VerifyResetCodeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyResetCodeRequest {
+    return new VerifyResetCodeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyResetCodeRequest | PlainMessage<VerifyResetCodeRequest> | undefined, b: VerifyResetCodeRequest | PlainMessage<VerifyResetCodeRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyResetCodeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.VerifyResetCodeResponse
+ */
+export class VerifyResetCodeResponse extends Message<VerifyResetCodeResponse> {
+  /**
+   * @generated from field: string reset_token = 1;
+   */
+  resetToken = "";
+
+  constructor(data?: PartialMessage<VerifyResetCodeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.VerifyResetCodeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reset_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyResetCodeResponse {
+    return new VerifyResetCodeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyResetCodeResponse {
+    return new VerifyResetCodeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyResetCodeResponse {
+    return new VerifyResetCodeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyResetCodeResponse | PlainMessage<VerifyResetCodeResponse> | undefined, b: VerifyResetCodeResponse | PlainMessage<VerifyResetCodeResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyResetCodeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ResetPasswordRequest
+ */
+export class ResetPasswordRequest extends Message<ResetPasswordRequest> {
+  /**
+   * @generated from field: string reset_token = 1;
+   */
+  resetToken = "";
+
+  /**
+   * @generated from field: string new_password = 2;
+   */
+  newPassword = "";
+
+  constructor(data?: PartialMessage<ResetPasswordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ResetPasswordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reset_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResetPasswordRequest | PlainMessage<ResetPasswordRequest> | undefined, b: ResetPasswordRequest | PlainMessage<ResetPasswordRequest> | undefined): boolean {
+    return proto3.util.equals(ResetPasswordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.auth.v1.ResetPasswordResponse
+ */
+export class ResetPasswordResponse extends Message<ResetPasswordResponse> {
+  constructor(data?: PartialMessage<ResetPasswordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.auth.v1.ResetPasswordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResetPasswordResponse | PlainMessage<ResetPasswordResponse> | undefined, b: ResetPasswordResponse | PlainMessage<ResetPasswordResponse> | undefined): boolean {
+    return proto3.util.equals(ResetPasswordResponse, a, b);
   }
 }
 

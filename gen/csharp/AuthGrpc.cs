@@ -54,6 +54,42 @@ namespace Blizkie.Auth.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.Auth.V1.LoginResponse> __Marshaller_blizkie_auth_v1_LoginResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.LoginResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RefreshTokenRequest> __Marshaller_blizkie_auth_v1_RefreshTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RefreshTokenRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RefreshTokenResponse> __Marshaller_blizkie_auth_v1_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RefreshTokenResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.LogoutRequest> __Marshaller_blizkie_auth_v1_LogoutRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.LogoutRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.LogoutResponse> __Marshaller_blizkie_auth_v1_LogoutResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.LogoutResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.LogoutAllRequest> __Marshaller_blizkie_auth_v1_LogoutAllRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.LogoutAllRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.LogoutAllResponse> __Marshaller_blizkie_auth_v1_LogoutAllResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.LogoutAllResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ListSessionsRequest> __Marshaller_blizkie_auth_v1_ListSessionsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ListSessionsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ListSessionsResponse> __Marshaller_blizkie_auth_v1_ListSessionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ListSessionsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RevokeSessionRequest> __Marshaller_blizkie_auth_v1_RevokeSessionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RevokeSessionRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RevokeSessionResponse> __Marshaller_blizkie_auth_v1_RevokeSessionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RevokeSessionResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ChangePasswordRequest> __Marshaller_blizkie_auth_v1_ChangePasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ChangePasswordRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ChangePasswordResponse> __Marshaller_blizkie_auth_v1_ChangePasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ChangePasswordResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RequestPasswordResetRequest> __Marshaller_blizkie_auth_v1_RequestPasswordResetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RequestPasswordResetRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.RequestPasswordResetResponse> __Marshaller_blizkie_auth_v1_RequestPasswordResetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.RequestPasswordResetResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.VerifyResetCodeRequest> __Marshaller_blizkie_auth_v1_VerifyResetCodeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.VerifyResetCodeRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.VerifyResetCodeResponse> __Marshaller_blizkie_auth_v1_VerifyResetCodeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.VerifyResetCodeResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ResetPasswordRequest> __Marshaller_blizkie_auth_v1_ResetPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ResetPasswordRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ResetPasswordResponse> __Marshaller_blizkie_auth_v1_ResetPasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ResetPasswordResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ValidateTokenRequest> __Marshaller_blizkie_auth_v1_ValidateTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ValidateTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.Auth.V1.ValidateTokenResponse> __Marshaller_blizkie_auth_v1_ValidateTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Auth.V1.ValidateTokenResponse.Parser));
@@ -73,6 +109,78 @@ namespace Blizkie.Auth.V1 {
         "Login",
         __Marshaller_blizkie_auth_v1_LoginRequest,
         __Marshaller_blizkie_auth_v1_LoginResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.RefreshTokenRequest, global::Blizkie.Auth.V1.RefreshTokenResponse> __Method_RefreshToken = new grpc::Method<global::Blizkie.Auth.V1.RefreshTokenRequest, global::Blizkie.Auth.V1.RefreshTokenResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RefreshToken",
+        __Marshaller_blizkie_auth_v1_RefreshTokenRequest,
+        __Marshaller_blizkie_auth_v1_RefreshTokenResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.LogoutRequest, global::Blizkie.Auth.V1.LogoutResponse> __Method_Logout = new grpc::Method<global::Blizkie.Auth.V1.LogoutRequest, global::Blizkie.Auth.V1.LogoutResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Logout",
+        __Marshaller_blizkie_auth_v1_LogoutRequest,
+        __Marshaller_blizkie_auth_v1_LogoutResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.LogoutAllRequest, global::Blizkie.Auth.V1.LogoutAllResponse> __Method_LogoutAll = new grpc::Method<global::Blizkie.Auth.V1.LogoutAllRequest, global::Blizkie.Auth.V1.LogoutAllResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LogoutAll",
+        __Marshaller_blizkie_auth_v1_LogoutAllRequest,
+        __Marshaller_blizkie_auth_v1_LogoutAllResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.ListSessionsRequest, global::Blizkie.Auth.V1.ListSessionsResponse> __Method_ListSessions = new grpc::Method<global::Blizkie.Auth.V1.ListSessionsRequest, global::Blizkie.Auth.V1.ListSessionsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListSessions",
+        __Marshaller_blizkie_auth_v1_ListSessionsRequest,
+        __Marshaller_blizkie_auth_v1_ListSessionsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.RevokeSessionRequest, global::Blizkie.Auth.V1.RevokeSessionResponse> __Method_RevokeSession = new grpc::Method<global::Blizkie.Auth.V1.RevokeSessionRequest, global::Blizkie.Auth.V1.RevokeSessionResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RevokeSession",
+        __Marshaller_blizkie_auth_v1_RevokeSessionRequest,
+        __Marshaller_blizkie_auth_v1_RevokeSessionResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.ChangePasswordRequest, global::Blizkie.Auth.V1.ChangePasswordResponse> __Method_ChangePassword = new grpc::Method<global::Blizkie.Auth.V1.ChangePasswordRequest, global::Blizkie.Auth.V1.ChangePasswordResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ChangePassword",
+        __Marshaller_blizkie_auth_v1_ChangePasswordRequest,
+        __Marshaller_blizkie_auth_v1_ChangePasswordResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.RequestPasswordResetRequest, global::Blizkie.Auth.V1.RequestPasswordResetResponse> __Method_RequestPasswordReset = new grpc::Method<global::Blizkie.Auth.V1.RequestPasswordResetRequest, global::Blizkie.Auth.V1.RequestPasswordResetResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RequestPasswordReset",
+        __Marshaller_blizkie_auth_v1_RequestPasswordResetRequest,
+        __Marshaller_blizkie_auth_v1_RequestPasswordResetResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.VerifyResetCodeRequest, global::Blizkie.Auth.V1.VerifyResetCodeResponse> __Method_VerifyResetCode = new grpc::Method<global::Blizkie.Auth.V1.VerifyResetCodeRequest, global::Blizkie.Auth.V1.VerifyResetCodeResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "VerifyResetCode",
+        __Marshaller_blizkie_auth_v1_VerifyResetCodeRequest,
+        __Marshaller_blizkie_auth_v1_VerifyResetCodeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Auth.V1.ResetPasswordRequest, global::Blizkie.Auth.V1.ResetPasswordResponse> __Method_ResetPassword = new grpc::Method<global::Blizkie.Auth.V1.ResetPasswordRequest, global::Blizkie.Auth.V1.ResetPasswordResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ResetPassword",
+        __Marshaller_blizkie_auth_v1_ResetPasswordRequest,
+        __Marshaller_blizkie_auth_v1_ResetPasswordResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Blizkie.Auth.V1.ValidateTokenRequest, global::Blizkie.Auth.V1.ValidateTokenResponse> __Method_ValidateToken = new grpc::Method<global::Blizkie.Auth.V1.ValidateTokenRequest, global::Blizkie.Auth.V1.ValidateTokenResponse>(
@@ -106,6 +214,60 @@ namespace Blizkie.Auth.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.LoginResponse> Login(global::Blizkie.Auth.V1.LoginRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.RefreshTokenResponse> RefreshToken(global::Blizkie.Auth.V1.RefreshTokenRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.LogoutResponse> Logout(global::Blizkie.Auth.V1.LogoutRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.LogoutAllResponse> LogoutAll(global::Blizkie.Auth.V1.LogoutAllRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.ListSessionsResponse> ListSessions(global::Blizkie.Auth.V1.ListSessionsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.RevokeSessionResponse> RevokeSession(global::Blizkie.Auth.V1.RevokeSessionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.ChangePasswordResponse> ChangePassword(global::Blizkie.Auth.V1.ChangePasswordRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.RequestPasswordResetResponse> RequestPasswordReset(global::Blizkie.Auth.V1.RequestPasswordResetRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.VerifyResetCodeResponse> VerifyResetCode(global::Blizkie.Auth.V1.VerifyResetCodeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Auth.V1.ResetPasswordResponse> ResetPassword(global::Blizkie.Auth.V1.ResetPasswordRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -219,6 +381,186 @@ namespace Blizkie.Auth.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_Login, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RefreshTokenResponse RefreshToken(global::Blizkie.Auth.V1.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RefreshTokenResponse RefreshToken(global::Blizkie.Auth.V1.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RefreshToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RefreshTokenResponse> RefreshTokenAsync(global::Blizkie.Auth.V1.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RefreshTokenResponse> RefreshTokenAsync(global::Blizkie.Auth.V1.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.LogoutResponse Logout(global::Blizkie.Auth.V1.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Logout(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.LogoutResponse Logout(global::Blizkie.Auth.V1.LogoutRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Logout, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.LogoutResponse> LogoutAsync(global::Blizkie.Auth.V1.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LogoutAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.LogoutResponse> LogoutAsync(global::Blizkie.Auth.V1.LogoutRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Logout, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.LogoutAllResponse LogoutAll(global::Blizkie.Auth.V1.LogoutAllRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LogoutAll(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.LogoutAllResponse LogoutAll(global::Blizkie.Auth.V1.LogoutAllRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LogoutAll, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.LogoutAllResponse> LogoutAllAsync(global::Blizkie.Auth.V1.LogoutAllRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LogoutAllAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.LogoutAllResponse> LogoutAllAsync(global::Blizkie.Auth.V1.LogoutAllRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LogoutAll, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ListSessionsResponse ListSessions(global::Blizkie.Auth.V1.ListSessionsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSessions(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ListSessionsResponse ListSessions(global::Blizkie.Auth.V1.ListSessionsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListSessions, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ListSessionsResponse> ListSessionsAsync(global::Blizkie.Auth.V1.ListSessionsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSessionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ListSessionsResponse> ListSessionsAsync(global::Blizkie.Auth.V1.ListSessionsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListSessions, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RevokeSessionResponse RevokeSession(global::Blizkie.Auth.V1.RevokeSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RevokeSession(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RevokeSessionResponse RevokeSession(global::Blizkie.Auth.V1.RevokeSessionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RevokeSession, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RevokeSessionResponse> RevokeSessionAsync(global::Blizkie.Auth.V1.RevokeSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RevokeSessionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RevokeSessionResponse> RevokeSessionAsync(global::Blizkie.Auth.V1.RevokeSessionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RevokeSession, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ChangePasswordResponse ChangePassword(global::Blizkie.Auth.V1.ChangePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangePassword(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ChangePasswordResponse ChangePassword(global::Blizkie.Auth.V1.ChangePasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ChangePassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ChangePasswordResponse> ChangePasswordAsync(global::Blizkie.Auth.V1.ChangePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangePasswordAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ChangePasswordResponse> ChangePasswordAsync(global::Blizkie.Auth.V1.ChangePasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ChangePassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RequestPasswordResetResponse RequestPasswordReset(global::Blizkie.Auth.V1.RequestPasswordResetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RequestPasswordReset(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.RequestPasswordResetResponse RequestPasswordReset(global::Blizkie.Auth.V1.RequestPasswordResetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RequestPasswordReset, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RequestPasswordResetResponse> RequestPasswordResetAsync(global::Blizkie.Auth.V1.RequestPasswordResetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RequestPasswordResetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.RequestPasswordResetResponse> RequestPasswordResetAsync(global::Blizkie.Auth.V1.RequestPasswordResetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RequestPasswordReset, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.VerifyResetCodeResponse VerifyResetCode(global::Blizkie.Auth.V1.VerifyResetCodeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return VerifyResetCode(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.VerifyResetCodeResponse VerifyResetCode(global::Blizkie.Auth.V1.VerifyResetCodeRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_VerifyResetCode, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.VerifyResetCodeResponse> VerifyResetCodeAsync(global::Blizkie.Auth.V1.VerifyResetCodeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return VerifyResetCodeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.VerifyResetCodeResponse> VerifyResetCodeAsync(global::Blizkie.Auth.V1.VerifyResetCodeRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_VerifyResetCode, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ResetPasswordResponse ResetPassword(global::Blizkie.Auth.V1.ResetPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResetPassword(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Auth.V1.ResetPasswordResponse ResetPassword(global::Blizkie.Auth.V1.ResetPasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ResetPassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ResetPasswordResponse> ResetPasswordAsync(global::Blizkie.Auth.V1.ResetPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResetPasswordAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Auth.V1.ResetPasswordResponse> ResetPasswordAsync(global::Blizkie.Auth.V1.ResetPasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ResetPassword, null, options, request);
+      }
       /// <summary>
       /// internal
       /// </summary>
@@ -283,6 +625,15 @@ namespace Blizkie.Auth.V1 {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Register, serviceImpl.Register)
           .AddMethod(__Method_Login, serviceImpl.Login)
+          .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
+          .AddMethod(__Method_Logout, serviceImpl.Logout)
+          .AddMethod(__Method_LogoutAll, serviceImpl.LogoutAll)
+          .AddMethod(__Method_ListSessions, serviceImpl.ListSessions)
+          .AddMethod(__Method_RevokeSession, serviceImpl.RevokeSession)
+          .AddMethod(__Method_ChangePassword, serviceImpl.ChangePassword)
+          .AddMethod(__Method_RequestPasswordReset, serviceImpl.RequestPasswordReset)
+          .AddMethod(__Method_VerifyResetCode, serviceImpl.VerifyResetCode)
+          .AddMethod(__Method_ResetPassword, serviceImpl.ResetPassword)
           .AddMethod(__Method_ValidateToken, serviceImpl.ValidateToken).Build();
     }
 
@@ -295,6 +646,15 @@ namespace Blizkie.Auth.V1 {
     {
       serviceBinder.AddMethod(__Method_Register, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.RegisterRequest, global::Blizkie.Auth.V1.RegisterResponse>(serviceImpl.Register));
       serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.LoginRequest, global::Blizkie.Auth.V1.LoginResponse>(serviceImpl.Login));
+      serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.RefreshTokenRequest, global::Blizkie.Auth.V1.RefreshTokenResponse>(serviceImpl.RefreshToken));
+      serviceBinder.AddMethod(__Method_Logout, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.LogoutRequest, global::Blizkie.Auth.V1.LogoutResponse>(serviceImpl.Logout));
+      serviceBinder.AddMethod(__Method_LogoutAll, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.LogoutAllRequest, global::Blizkie.Auth.V1.LogoutAllResponse>(serviceImpl.LogoutAll));
+      serviceBinder.AddMethod(__Method_ListSessions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.ListSessionsRequest, global::Blizkie.Auth.V1.ListSessionsResponse>(serviceImpl.ListSessions));
+      serviceBinder.AddMethod(__Method_RevokeSession, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.RevokeSessionRequest, global::Blizkie.Auth.V1.RevokeSessionResponse>(serviceImpl.RevokeSession));
+      serviceBinder.AddMethod(__Method_ChangePassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.ChangePasswordRequest, global::Blizkie.Auth.V1.ChangePasswordResponse>(serviceImpl.ChangePassword));
+      serviceBinder.AddMethod(__Method_RequestPasswordReset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.RequestPasswordResetRequest, global::Blizkie.Auth.V1.RequestPasswordResetResponse>(serviceImpl.RequestPasswordReset));
+      serviceBinder.AddMethod(__Method_VerifyResetCode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.VerifyResetCodeRequest, global::Blizkie.Auth.V1.VerifyResetCodeResponse>(serviceImpl.VerifyResetCode));
+      serviceBinder.AddMethod(__Method_ResetPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.ResetPasswordRequest, global::Blizkie.Auth.V1.ResetPasswordResponse>(serviceImpl.ResetPassword));
       serviceBinder.AddMethod(__Method_ValidateToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Auth.V1.ValidateTokenRequest, global::Blizkie.Auth.V1.ValidateTokenResponse>(serviceImpl.ValidateToken));
     }
 

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse, ValidateTokenRequest, ValidateTokenResponse } from "./auth_pb.js";
+import { ChangePasswordRequest, ChangePasswordResponse, ListSessionsRequest, ListSessionsResponse, LoginRequest, LoginResponse, LogoutAllRequest, LogoutAllResponse, LogoutRequest, LogoutResponse, RefreshTokenRequest, RefreshTokenResponse, RegisterRequest, RegisterResponse, RequestPasswordResetRequest, RequestPasswordResetResponse, ResetPasswordRequest, ResetPasswordResponse, RevokeSessionRequest, RevokeSessionResponse, ValidateTokenRequest, ValidateTokenResponse, VerifyResetCodeRequest, VerifyResetCodeResponse } from "./auth_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -30,6 +30,87 @@ export const AuthService = {
       name: "Login",
       I: LoginRequest,
       O: LoginResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.RefreshToken
+     */
+    refreshToken: {
+      name: "RefreshToken",
+      I: RefreshTokenRequest,
+      O: RefreshTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.Logout
+     */
+    logout: {
+      name: "Logout",
+      I: LogoutRequest,
+      O: LogoutResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.LogoutAll
+     */
+    logoutAll: {
+      name: "LogoutAll",
+      I: LogoutAllRequest,
+      O: LogoutAllResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.ListSessions
+     */
+    listSessions: {
+      name: "ListSessions",
+      I: ListSessionsRequest,
+      O: ListSessionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.RevokeSession
+     */
+    revokeSession: {
+      name: "RevokeSession",
+      I: RevokeSessionRequest,
+      O: RevokeSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.ChangePassword
+     */
+    changePassword: {
+      name: "ChangePassword",
+      I: ChangePasswordRequest,
+      O: ChangePasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.RequestPasswordReset
+     */
+    requestPasswordReset: {
+      name: "RequestPasswordReset",
+      I: RequestPasswordResetRequest,
+      O: RequestPasswordResetResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.VerifyResetCode
+     */
+    verifyResetCode: {
+      name: "VerifyResetCode",
+      I: VerifyResetCodeRequest,
+      O: VerifyResetCodeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.auth.v1.AuthService.ResetPassword
+     */
+    resetPassword: {
+      name: "ResetPassword",
+      I: ResetPasswordRequest,
+      O: ResetPasswordResponse,
       kind: MethodKind.Unary,
     },
     /**

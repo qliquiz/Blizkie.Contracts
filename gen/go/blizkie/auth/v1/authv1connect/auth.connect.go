@@ -37,6 +37,31 @@ const (
 	AuthServiceRegisterProcedure = "/blizkie.auth.v1.AuthService/Register"
 	// AuthServiceLoginProcedure is the fully-qualified name of the AuthService's Login RPC.
 	AuthServiceLoginProcedure = "/blizkie.auth.v1.AuthService/Login"
+	// AuthServiceRefreshTokenProcedure is the fully-qualified name of the AuthService's RefreshToken
+	// RPC.
+	AuthServiceRefreshTokenProcedure = "/blizkie.auth.v1.AuthService/RefreshToken"
+	// AuthServiceLogoutProcedure is the fully-qualified name of the AuthService's Logout RPC.
+	AuthServiceLogoutProcedure = "/blizkie.auth.v1.AuthService/Logout"
+	// AuthServiceLogoutAllProcedure is the fully-qualified name of the AuthService's LogoutAll RPC.
+	AuthServiceLogoutAllProcedure = "/blizkie.auth.v1.AuthService/LogoutAll"
+	// AuthServiceListSessionsProcedure is the fully-qualified name of the AuthService's ListSessions
+	// RPC.
+	AuthServiceListSessionsProcedure = "/blizkie.auth.v1.AuthService/ListSessions"
+	// AuthServiceRevokeSessionProcedure is the fully-qualified name of the AuthService's RevokeSession
+	// RPC.
+	AuthServiceRevokeSessionProcedure = "/blizkie.auth.v1.AuthService/RevokeSession"
+	// AuthServiceChangePasswordProcedure is the fully-qualified name of the AuthService's
+	// ChangePassword RPC.
+	AuthServiceChangePasswordProcedure = "/blizkie.auth.v1.AuthService/ChangePassword"
+	// AuthServiceRequestPasswordResetProcedure is the fully-qualified name of the AuthService's
+	// RequestPasswordReset RPC.
+	AuthServiceRequestPasswordResetProcedure = "/blizkie.auth.v1.AuthService/RequestPasswordReset"
+	// AuthServiceVerifyResetCodeProcedure is the fully-qualified name of the AuthService's
+	// VerifyResetCode RPC.
+	AuthServiceVerifyResetCodeProcedure = "/blizkie.auth.v1.AuthService/VerifyResetCode"
+	// AuthServiceResetPasswordProcedure is the fully-qualified name of the AuthService's ResetPassword
+	// RPC.
+	AuthServiceResetPasswordProcedure = "/blizkie.auth.v1.AuthService/ResetPassword"
 	// AuthServiceValidateTokenProcedure is the fully-qualified name of the AuthService's ValidateToken
 	// RPC.
 	AuthServiceValidateTokenProcedure = "/blizkie.auth.v1.AuthService/ValidateToken"
@@ -44,10 +69,19 @@ const (
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	authServiceServiceDescriptor             = v1.File_blizkie_auth_v1_auth_proto.Services().ByName("AuthService")
-	authServiceRegisterMethodDescriptor      = authServiceServiceDescriptor.Methods().ByName("Register")
-	authServiceLoginMethodDescriptor         = authServiceServiceDescriptor.Methods().ByName("Login")
-	authServiceValidateTokenMethodDescriptor = authServiceServiceDescriptor.Methods().ByName("ValidateToken")
+	authServiceServiceDescriptor                    = v1.File_blizkie_auth_v1_auth_proto.Services().ByName("AuthService")
+	authServiceRegisterMethodDescriptor             = authServiceServiceDescriptor.Methods().ByName("Register")
+	authServiceLoginMethodDescriptor                = authServiceServiceDescriptor.Methods().ByName("Login")
+	authServiceRefreshTokenMethodDescriptor         = authServiceServiceDescriptor.Methods().ByName("RefreshToken")
+	authServiceLogoutMethodDescriptor               = authServiceServiceDescriptor.Methods().ByName("Logout")
+	authServiceLogoutAllMethodDescriptor            = authServiceServiceDescriptor.Methods().ByName("LogoutAll")
+	authServiceListSessionsMethodDescriptor         = authServiceServiceDescriptor.Methods().ByName("ListSessions")
+	authServiceRevokeSessionMethodDescriptor        = authServiceServiceDescriptor.Methods().ByName("RevokeSession")
+	authServiceChangePasswordMethodDescriptor       = authServiceServiceDescriptor.Methods().ByName("ChangePassword")
+	authServiceRequestPasswordResetMethodDescriptor = authServiceServiceDescriptor.Methods().ByName("RequestPasswordReset")
+	authServiceVerifyResetCodeMethodDescriptor      = authServiceServiceDescriptor.Methods().ByName("VerifyResetCode")
+	authServiceResetPasswordMethodDescriptor        = authServiceServiceDescriptor.Methods().ByName("ResetPassword")
+	authServiceValidateTokenMethodDescriptor        = authServiceServiceDescriptor.Methods().ByName("ValidateToken")
 )
 
 // AuthServiceClient is a client for the blizkie.auth.v1.AuthService service.
@@ -55,6 +89,15 @@ type AuthServiceClient interface {
 	// mobile
 	Register(context.Context, *connect.Request[v1.RegisterRequest]) (*connect.Response[v1.RegisterResponse], error)
 	Login(context.Context, *connect.Request[v1.LoginRequest]) (*connect.Response[v1.LoginResponse], error)
+	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	Logout(context.Context, *connect.Request[v1.LogoutRequest]) (*connect.Response[v1.LogoutResponse], error)
+	LogoutAll(context.Context, *connect.Request[v1.LogoutAllRequest]) (*connect.Response[v1.LogoutAllResponse], error)
+	ListSessions(context.Context, *connect.Request[v1.ListSessionsRequest]) (*connect.Response[v1.ListSessionsResponse], error)
+	RevokeSession(context.Context, *connect.Request[v1.RevokeSessionRequest]) (*connect.Response[v1.RevokeSessionResponse], error)
+	ChangePassword(context.Context, *connect.Request[v1.ChangePasswordRequest]) (*connect.Response[v1.ChangePasswordResponse], error)
+	RequestPasswordReset(context.Context, *connect.Request[v1.RequestPasswordResetRequest]) (*connect.Response[v1.RequestPasswordResetResponse], error)
+	VerifyResetCode(context.Context, *connect.Request[v1.VerifyResetCodeRequest]) (*connect.Response[v1.VerifyResetCodeResponse], error)
+	ResetPassword(context.Context, *connect.Request[v1.ResetPasswordRequest]) (*connect.Response[v1.ResetPasswordResponse], error)
 	// internal
 	ValidateToken(context.Context, *connect.Request[v1.ValidateTokenRequest]) (*connect.Response[v1.ValidateTokenResponse], error)
 }
@@ -81,6 +124,60 @@ func NewAuthServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(authServiceLoginMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		refreshToken: connect.NewClient[v1.RefreshTokenRequest, v1.RefreshTokenResponse](
+			httpClient,
+			baseURL+AuthServiceRefreshTokenProcedure,
+			connect.WithSchema(authServiceRefreshTokenMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		logout: connect.NewClient[v1.LogoutRequest, v1.LogoutResponse](
+			httpClient,
+			baseURL+AuthServiceLogoutProcedure,
+			connect.WithSchema(authServiceLogoutMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		logoutAll: connect.NewClient[v1.LogoutAllRequest, v1.LogoutAllResponse](
+			httpClient,
+			baseURL+AuthServiceLogoutAllProcedure,
+			connect.WithSchema(authServiceLogoutAllMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		listSessions: connect.NewClient[v1.ListSessionsRequest, v1.ListSessionsResponse](
+			httpClient,
+			baseURL+AuthServiceListSessionsProcedure,
+			connect.WithSchema(authServiceListSessionsMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		revokeSession: connect.NewClient[v1.RevokeSessionRequest, v1.RevokeSessionResponse](
+			httpClient,
+			baseURL+AuthServiceRevokeSessionProcedure,
+			connect.WithSchema(authServiceRevokeSessionMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		changePassword: connect.NewClient[v1.ChangePasswordRequest, v1.ChangePasswordResponse](
+			httpClient,
+			baseURL+AuthServiceChangePasswordProcedure,
+			connect.WithSchema(authServiceChangePasswordMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		requestPasswordReset: connect.NewClient[v1.RequestPasswordResetRequest, v1.RequestPasswordResetResponse](
+			httpClient,
+			baseURL+AuthServiceRequestPasswordResetProcedure,
+			connect.WithSchema(authServiceRequestPasswordResetMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		verifyResetCode: connect.NewClient[v1.VerifyResetCodeRequest, v1.VerifyResetCodeResponse](
+			httpClient,
+			baseURL+AuthServiceVerifyResetCodeProcedure,
+			connect.WithSchema(authServiceVerifyResetCodeMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		resetPassword: connect.NewClient[v1.ResetPasswordRequest, v1.ResetPasswordResponse](
+			httpClient,
+			baseURL+AuthServiceResetPasswordProcedure,
+			connect.WithSchema(authServiceResetPasswordMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		validateToken: connect.NewClient[v1.ValidateTokenRequest, v1.ValidateTokenResponse](
 			httpClient,
 			baseURL+AuthServiceValidateTokenProcedure,
@@ -92,9 +189,18 @@ func NewAuthServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // authServiceClient implements AuthServiceClient.
 type authServiceClient struct {
-	register      *connect.Client[v1.RegisterRequest, v1.RegisterResponse]
-	login         *connect.Client[v1.LoginRequest, v1.LoginResponse]
-	validateToken *connect.Client[v1.ValidateTokenRequest, v1.ValidateTokenResponse]
+	register             *connect.Client[v1.RegisterRequest, v1.RegisterResponse]
+	login                *connect.Client[v1.LoginRequest, v1.LoginResponse]
+	refreshToken         *connect.Client[v1.RefreshTokenRequest, v1.RefreshTokenResponse]
+	logout               *connect.Client[v1.LogoutRequest, v1.LogoutResponse]
+	logoutAll            *connect.Client[v1.LogoutAllRequest, v1.LogoutAllResponse]
+	listSessions         *connect.Client[v1.ListSessionsRequest, v1.ListSessionsResponse]
+	revokeSession        *connect.Client[v1.RevokeSessionRequest, v1.RevokeSessionResponse]
+	changePassword       *connect.Client[v1.ChangePasswordRequest, v1.ChangePasswordResponse]
+	requestPasswordReset *connect.Client[v1.RequestPasswordResetRequest, v1.RequestPasswordResetResponse]
+	verifyResetCode      *connect.Client[v1.VerifyResetCodeRequest, v1.VerifyResetCodeResponse]
+	resetPassword        *connect.Client[v1.ResetPasswordRequest, v1.ResetPasswordResponse]
+	validateToken        *connect.Client[v1.ValidateTokenRequest, v1.ValidateTokenResponse]
 }
 
 // Register calls blizkie.auth.v1.AuthService.Register.
@@ -107,6 +213,51 @@ func (c *authServiceClient) Login(ctx context.Context, req *connect.Request[v1.L
 	return c.login.CallUnary(ctx, req)
 }
 
+// RefreshToken calls blizkie.auth.v1.AuthService.RefreshToken.
+func (c *authServiceClient) RefreshToken(ctx context.Context, req *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
+	return c.refreshToken.CallUnary(ctx, req)
+}
+
+// Logout calls blizkie.auth.v1.AuthService.Logout.
+func (c *authServiceClient) Logout(ctx context.Context, req *connect.Request[v1.LogoutRequest]) (*connect.Response[v1.LogoutResponse], error) {
+	return c.logout.CallUnary(ctx, req)
+}
+
+// LogoutAll calls blizkie.auth.v1.AuthService.LogoutAll.
+func (c *authServiceClient) LogoutAll(ctx context.Context, req *connect.Request[v1.LogoutAllRequest]) (*connect.Response[v1.LogoutAllResponse], error) {
+	return c.logoutAll.CallUnary(ctx, req)
+}
+
+// ListSessions calls blizkie.auth.v1.AuthService.ListSessions.
+func (c *authServiceClient) ListSessions(ctx context.Context, req *connect.Request[v1.ListSessionsRequest]) (*connect.Response[v1.ListSessionsResponse], error) {
+	return c.listSessions.CallUnary(ctx, req)
+}
+
+// RevokeSession calls blizkie.auth.v1.AuthService.RevokeSession.
+func (c *authServiceClient) RevokeSession(ctx context.Context, req *connect.Request[v1.RevokeSessionRequest]) (*connect.Response[v1.RevokeSessionResponse], error) {
+	return c.revokeSession.CallUnary(ctx, req)
+}
+
+// ChangePassword calls blizkie.auth.v1.AuthService.ChangePassword.
+func (c *authServiceClient) ChangePassword(ctx context.Context, req *connect.Request[v1.ChangePasswordRequest]) (*connect.Response[v1.ChangePasswordResponse], error) {
+	return c.changePassword.CallUnary(ctx, req)
+}
+
+// RequestPasswordReset calls blizkie.auth.v1.AuthService.RequestPasswordReset.
+func (c *authServiceClient) RequestPasswordReset(ctx context.Context, req *connect.Request[v1.RequestPasswordResetRequest]) (*connect.Response[v1.RequestPasswordResetResponse], error) {
+	return c.requestPasswordReset.CallUnary(ctx, req)
+}
+
+// VerifyResetCode calls blizkie.auth.v1.AuthService.VerifyResetCode.
+func (c *authServiceClient) VerifyResetCode(ctx context.Context, req *connect.Request[v1.VerifyResetCodeRequest]) (*connect.Response[v1.VerifyResetCodeResponse], error) {
+	return c.verifyResetCode.CallUnary(ctx, req)
+}
+
+// ResetPassword calls blizkie.auth.v1.AuthService.ResetPassword.
+func (c *authServiceClient) ResetPassword(ctx context.Context, req *connect.Request[v1.ResetPasswordRequest]) (*connect.Response[v1.ResetPasswordResponse], error) {
+	return c.resetPassword.CallUnary(ctx, req)
+}
+
 // ValidateToken calls blizkie.auth.v1.AuthService.ValidateToken.
 func (c *authServiceClient) ValidateToken(ctx context.Context, req *connect.Request[v1.ValidateTokenRequest]) (*connect.Response[v1.ValidateTokenResponse], error) {
 	return c.validateToken.CallUnary(ctx, req)
@@ -117,6 +268,15 @@ type AuthServiceHandler interface {
 	// mobile
 	Register(context.Context, *connect.Request[v1.RegisterRequest]) (*connect.Response[v1.RegisterResponse], error)
 	Login(context.Context, *connect.Request[v1.LoginRequest]) (*connect.Response[v1.LoginResponse], error)
+	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	Logout(context.Context, *connect.Request[v1.LogoutRequest]) (*connect.Response[v1.LogoutResponse], error)
+	LogoutAll(context.Context, *connect.Request[v1.LogoutAllRequest]) (*connect.Response[v1.LogoutAllResponse], error)
+	ListSessions(context.Context, *connect.Request[v1.ListSessionsRequest]) (*connect.Response[v1.ListSessionsResponse], error)
+	RevokeSession(context.Context, *connect.Request[v1.RevokeSessionRequest]) (*connect.Response[v1.RevokeSessionResponse], error)
+	ChangePassword(context.Context, *connect.Request[v1.ChangePasswordRequest]) (*connect.Response[v1.ChangePasswordResponse], error)
+	RequestPasswordReset(context.Context, *connect.Request[v1.RequestPasswordResetRequest]) (*connect.Response[v1.RequestPasswordResetResponse], error)
+	VerifyResetCode(context.Context, *connect.Request[v1.VerifyResetCodeRequest]) (*connect.Response[v1.VerifyResetCodeResponse], error)
+	ResetPassword(context.Context, *connect.Request[v1.ResetPasswordRequest]) (*connect.Response[v1.ResetPasswordResponse], error)
 	// internal
 	ValidateToken(context.Context, *connect.Request[v1.ValidateTokenRequest]) (*connect.Response[v1.ValidateTokenResponse], error)
 }
@@ -139,6 +299,60 @@ func NewAuthServiceHandler(svc AuthServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(authServiceLoginMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	authServiceRefreshTokenHandler := connect.NewUnaryHandler(
+		AuthServiceRefreshTokenProcedure,
+		svc.RefreshToken,
+		connect.WithSchema(authServiceRefreshTokenMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceLogoutHandler := connect.NewUnaryHandler(
+		AuthServiceLogoutProcedure,
+		svc.Logout,
+		connect.WithSchema(authServiceLogoutMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceLogoutAllHandler := connect.NewUnaryHandler(
+		AuthServiceLogoutAllProcedure,
+		svc.LogoutAll,
+		connect.WithSchema(authServiceLogoutAllMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceListSessionsHandler := connect.NewUnaryHandler(
+		AuthServiceListSessionsProcedure,
+		svc.ListSessions,
+		connect.WithSchema(authServiceListSessionsMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceRevokeSessionHandler := connect.NewUnaryHandler(
+		AuthServiceRevokeSessionProcedure,
+		svc.RevokeSession,
+		connect.WithSchema(authServiceRevokeSessionMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceChangePasswordHandler := connect.NewUnaryHandler(
+		AuthServiceChangePasswordProcedure,
+		svc.ChangePassword,
+		connect.WithSchema(authServiceChangePasswordMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceRequestPasswordResetHandler := connect.NewUnaryHandler(
+		AuthServiceRequestPasswordResetProcedure,
+		svc.RequestPasswordReset,
+		connect.WithSchema(authServiceRequestPasswordResetMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceVerifyResetCodeHandler := connect.NewUnaryHandler(
+		AuthServiceVerifyResetCodeProcedure,
+		svc.VerifyResetCode,
+		connect.WithSchema(authServiceVerifyResetCodeMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	authServiceResetPasswordHandler := connect.NewUnaryHandler(
+		AuthServiceResetPasswordProcedure,
+		svc.ResetPassword,
+		connect.WithSchema(authServiceResetPasswordMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	authServiceValidateTokenHandler := connect.NewUnaryHandler(
 		AuthServiceValidateTokenProcedure,
 		svc.ValidateToken,
@@ -151,6 +365,24 @@ func NewAuthServiceHandler(svc AuthServiceHandler, opts ...connect.HandlerOption
 			authServiceRegisterHandler.ServeHTTP(w, r)
 		case AuthServiceLoginProcedure:
 			authServiceLoginHandler.ServeHTTP(w, r)
+		case AuthServiceRefreshTokenProcedure:
+			authServiceRefreshTokenHandler.ServeHTTP(w, r)
+		case AuthServiceLogoutProcedure:
+			authServiceLogoutHandler.ServeHTTP(w, r)
+		case AuthServiceLogoutAllProcedure:
+			authServiceLogoutAllHandler.ServeHTTP(w, r)
+		case AuthServiceListSessionsProcedure:
+			authServiceListSessionsHandler.ServeHTTP(w, r)
+		case AuthServiceRevokeSessionProcedure:
+			authServiceRevokeSessionHandler.ServeHTTP(w, r)
+		case AuthServiceChangePasswordProcedure:
+			authServiceChangePasswordHandler.ServeHTTP(w, r)
+		case AuthServiceRequestPasswordResetProcedure:
+			authServiceRequestPasswordResetHandler.ServeHTTP(w, r)
+		case AuthServiceVerifyResetCodeProcedure:
+			authServiceVerifyResetCodeHandler.ServeHTTP(w, r)
+		case AuthServiceResetPasswordProcedure:
+			authServiceResetPasswordHandler.ServeHTTP(w, r)
 		case AuthServiceValidateTokenProcedure:
 			authServiceValidateTokenHandler.ServeHTTP(w, r)
 		default:
@@ -168,6 +400,42 @@ func (UnimplementedAuthServiceHandler) Register(context.Context, *connect.Reques
 
 func (UnimplementedAuthServiceHandler) Login(context.Context, *connect.Request[v1.LoginRequest]) (*connect.Response[v1.LoginResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.Login is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.RefreshToken is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) Logout(context.Context, *connect.Request[v1.LogoutRequest]) (*connect.Response[v1.LogoutResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.Logout is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) LogoutAll(context.Context, *connect.Request[v1.LogoutAllRequest]) (*connect.Response[v1.LogoutAllResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.LogoutAll is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) ListSessions(context.Context, *connect.Request[v1.ListSessionsRequest]) (*connect.Response[v1.ListSessionsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.ListSessions is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) RevokeSession(context.Context, *connect.Request[v1.RevokeSessionRequest]) (*connect.Response[v1.RevokeSessionResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.RevokeSession is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) ChangePassword(context.Context, *connect.Request[v1.ChangePasswordRequest]) (*connect.Response[v1.ChangePasswordResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.ChangePassword is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) RequestPasswordReset(context.Context, *connect.Request[v1.RequestPasswordResetRequest]) (*connect.Response[v1.RequestPasswordResetResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.RequestPasswordReset is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) VerifyResetCode(context.Context, *connect.Request[v1.VerifyResetCodeRequest]) (*connect.Response[v1.VerifyResetCodeResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.VerifyResetCode is not implemented"))
+}
+
+func (UnimplementedAuthServiceHandler) ResetPassword(context.Context, *connect.Request[v1.ResetPasswordRequest]) (*connect.Response[v1.ResetPasswordResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.auth.v1.AuthService.ResetPassword is not implemented"))
 }
 
 func (UnimplementedAuthServiceHandler) ValidateToken(context.Context, *connect.Request[v1.ValidateTokenRequest]) (*connect.Response[v1.ValidateTokenResponse], error) {

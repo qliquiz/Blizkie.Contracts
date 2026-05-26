@@ -14,10 +14,67 @@ service AuthService {
       body: "*"
     };
   }
-  
+
   rpc Login(LoginRequest) returns (LoginResponse) {
     option (google.api.http) = {
       post: "/api/v1/auth/login"
+      body: "*"
+    };
+  }
+
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/refresh"
+      body: "*"
+    };
+  }
+
+  rpc Logout(LogoutRequest) returns (LogoutResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/logout"
+      body: "*"
+    };
+  }
+
+  rpc LogoutAll(LogoutAllRequest) returns (LogoutAllResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/logout-all"
+      body: "*"
+    };
+  }
+
+  rpc ListSessions(ListSessionsRequest) returns (ListSessionsResponse) {
+    option (google.api.http) = {get: "/api/v1/auth/sessions"};
+  }
+
+  rpc RevokeSession(RevokeSessionRequest) returns (RevokeSessionResponse) {
+    option (google.api.http) = {delete: "/api/v1/auth/sessions/{session_id}"};
+  }
+
+  rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/change-password"
+      body: "*"
+    };
+  }
+
+  rpc RequestPasswordReset(RequestPasswordResetRequest) returns (RequestPasswordResetResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/password-reset/request"
+      body: "*"
+    };
+  }
+
+  rpc VerifyResetCode(VerifyResetCodeRequest) returns (VerifyResetCodeResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/password-reset/verify"
+      body: "*"
+    };
+  }
+
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/password-reset/confirm"
       body: "*"
     };
   }
@@ -32,7 +89,7 @@ service AuthService {
 }
 
 message RegisterRequest {
-  optional string phone = 1; 
+  optional string phone = 1;
   optional string email = 2;
   string password = 3;
   string name = 4;
@@ -43,14 +100,88 @@ message RegisterResponse {
 }
 
 message LoginRequest {
-  string phone = 1;
+  string phone = 1; // login field: phone or email
   string password = 2;
+  string device_id = 3;
 }
 
 message LoginResponse {
   string access_token = 1;
   string refresh_token = 2;
 }
+
+message RefreshTokenRequest {
+  string refresh_token = 1;
+  string device_id = 2;
+}
+
+message RefreshTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message LogoutRequest {
+  string refresh_token = 1;
+}
+
+message LogoutResponse {}
+
+message LogoutAllRequest {}
+
+message LogoutAllResponse {
+  int32 sessions_revoked = 1;
+}
+
+message SessionInfo {
+  string session_id = 1;
+  string device_id = 2;
+  string user_agent = 3;
+  string ip_address = 4;
+  int64 created_at = 5;
+  int64 last_used_at = 6;
+}
+
+message ListSessionsRequest {}
+
+message ListSessionsResponse {
+  repeated SessionInfo sessions = 1;
+}
+
+message RevokeSessionRequest {
+  string session_id = 1;
+}
+
+message RevokeSessionResponse {}
+
+message ChangePasswordRequest {
+  string current_password = 1;
+  string new_password = 2;
+  string refresh_token = 3;
+}
+
+message ChangePasswordResponse {}
+
+message RequestPasswordResetRequest {
+  string email = 1;
+}
+
+message RequestPasswordResetResponse {}
+
+message VerifyResetCodeRequest {
+  string email = 1;
+  string otp = 2;
+}
+
+message VerifyResetCodeResponse {
+  string reset_token = 1;
+}
+
+message ResetPasswordRequest {
+  string reset_token = 1;
+  string new_password = 2;
+}
+
+message ResetPasswordResponse {}
 
 message ValidateTokenRequest {
   string access_token = 1;
