@@ -11,19 +11,24 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export class RegisterRequest extends Message<RegisterRequest> {
   /**
-   * @generated from field: string phone = 1;
+   * @generated from field: optional string phone = 1;
    */
-  phone = "";
+  phone?: string;
 
   /**
-   * @generated from field: string password = 2;
+   * @generated from field: optional string email = 2;
+   */
+  email?: string;
+
+  /**
+   * @generated from field: string password = 3;
    */
   password = "";
 
   /**
-   * @generated from field: string full_name = 3;
+   * @generated from field: string name = 4;
    */
-  fullName = "";
+  name = "";
 
   constructor(data?: PartialMessage<RegisterRequest>) {
     super();
@@ -33,9 +38,10 @@ export class RegisterRequest extends Message<RegisterRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "blizkie.auth.v1.RegisterRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "phone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "full_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "phone", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterRequest {

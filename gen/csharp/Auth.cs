@@ -25,33 +25,34 @@ namespace Blizkie.Auth.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpibGl6a2llL2F1dGgvdjEvYXV0aC5wcm90bxIPYmxpemtpZS5hdXRoLnYx",
-            "Ghxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvImAKD1JlZ2lzdGVyUmVx",
-            "dWVzdBIUCgVwaG9uZRgBIAEoCVIFcGhvbmUSGgoIcGFzc3dvcmQYAiABKAlS",
-            "CHBhc3N3b3JkEhsKCWZ1bGxfbmFtZRgDIAEoCVIIZnVsbE5hbWUiKwoQUmVn",
-            "aXN0ZXJSZXNwb25zZRIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQiQAoMTG9n",
-            "aW5SZXF1ZXN0EhQKBXBob25lGAEgASgJUgVwaG9uZRIaCghwYXNzd29yZBgC",
-            "IAEoCVIIcGFzc3dvcmQiVwoNTG9naW5SZXNwb25zZRIhCgxhY2Nlc3NfdG9r",
-            "ZW4YASABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YAiABKAlS",
-            "DHJlZnJlc2hUb2tlbiI5ChRWYWxpZGF0ZVRva2VuUmVxdWVzdBIhCgxhY2Nl",
-            "c3NfdG9rZW4YASABKAlSC2FjY2Vzc1Rva2VuIksKFVZhbGlkYXRlVG9rZW5S",
-            "ZXNwb25zZRIZCghpc192YWxpZBgBIAEoCFIHaXNWYWxpZBIXCgd1c2VyX2lk",
-            "GAIgASgJUgZ1c2VySWQy8AIKC0F1dGhTZXJ2aWNlEnEKCFJlZ2lzdGVyEiAu",
-            "YmxpemtpZS5hdXRoLnYxLlJlZ2lzdGVyUmVxdWVzdBohLmJsaXpraWUuYXV0",
-            "aC52MS5SZWdpc3RlclJlc3BvbnNlIiCC0+STAhoiFS9hcGkvdjEvYXV0aC9y",
-            "ZWdpc3RlcjoBKhJlCgVMb2dpbhIdLmJsaXpraWUuYXV0aC52MS5Mb2dpblJl",
-            "cXVlc3QaHi5ibGl6a2llLmF1dGgudjEuTG9naW5SZXNwb25zZSIdgtPkkwIX",
-            "IhIvYXBpL3YxL2F1dGgvbG9naW46ASoShgEKDVZhbGlkYXRlVG9rZW4SJS5i",
-            "bGl6a2llLmF1dGgudjEuVmFsaWRhdGVUb2tlblJlcXVlc3QaJi5ibGl6a2ll",
-            "LmF1dGgudjEuVmFsaWRhdGVUb2tlblJlc3BvbnNlIiaC0+STAiAiGy9hcGkv",
-            "aW50ZXJuYWwvYXV0aC92YWxpZGF0ZToBKkK6AQoTY29tLmJsaXpraWUuYXV0",
-            "aC52MUIJQXV0aFByb3RvUAFaOmdpdGh1Yi5jb20vcWxpcXVpei9ibGl6a2ll",
-            "LWNvbnRyYWN0cy9nZW4vZ28vYXV0aC92MTthdXRodjGiAgNCQViqAg9CbGl6",
-            "a2llLkF1dGguVjHKAg9CbGl6a2llXEF1dGhcVjHiAhtCbGl6a2llXEF1dGhc",
-            "VjFcR1BCTWV0YWRhdGHqAhFCbGl6a2llOjpBdXRoOjpWMWIGcHJvdG8z"));
+            "Ghxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIosBCg9SZWdpc3RlclJl",
+            "cXVlc3QSGQoFcGhvbmUYASABKAlIAFIFcGhvbmWIAQESGQoFZW1haWwYAiAB",
+            "KAlIAVIFZW1haWyIAQESGgoIcGFzc3dvcmQYAyABKAlSCHBhc3N3b3JkEhIK",
+            "BG5hbWUYBCABKAlSBG5hbWVCCAoGX3Bob25lQggKBl9lbWFpbCIrChBSZWdp",
+            "c3RlclJlc3BvbnNlEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZCJACgxMb2dp",
+            "blJlcXVlc3QSFAoFcGhvbmUYASABKAlSBXBob25lEhoKCHBhc3N3b3JkGAIg",
+            "ASgJUghwYXNzd29yZCJXCg1Mb2dpblJlc3BvbnNlEiEKDGFjY2Vzc190b2tl",
+            "bhgBIAEoCVILYWNjZXNzVG9rZW4SIwoNcmVmcmVzaF90b2tlbhgCIAEoCVIM",
+            "cmVmcmVzaFRva2VuIjkKFFZhbGlkYXRlVG9rZW5SZXF1ZXN0EiEKDGFjY2Vz",
+            "c190b2tlbhgBIAEoCVILYWNjZXNzVG9rZW4iSwoVVmFsaWRhdGVUb2tlblJl",
+            "c3BvbnNlEhkKCGlzX3ZhbGlkGAEgASgIUgdpc1ZhbGlkEhcKB3VzZXJfaWQY",
+            "AiABKAlSBnVzZXJJZDLwAgoLQXV0aFNlcnZpY2UScQoIUmVnaXN0ZXISIC5i",
+            "bGl6a2llLmF1dGgudjEuUmVnaXN0ZXJSZXF1ZXN0GiEuYmxpemtpZS5hdXRo",
+            "LnYxLlJlZ2lzdGVyUmVzcG9uc2UiIILT5JMCGiIVL2FwaS92MS9hdXRoL3Jl",
+            "Z2lzdGVyOgEqEmUKBUxvZ2luEh0uYmxpemtpZS5hdXRoLnYxLkxvZ2luUmVx",
+            "dWVzdBoeLmJsaXpraWUuYXV0aC52MS5Mb2dpblJlc3BvbnNlIh2C0+STAhci",
+            "Ei9hcGkvdjEvYXV0aC9sb2dpbjoBKhKGAQoNVmFsaWRhdGVUb2tlbhIlLmJs",
+            "aXpraWUuYXV0aC52MS5WYWxpZGF0ZVRva2VuUmVxdWVzdBomLmJsaXpraWUu",
+            "YXV0aC52MS5WYWxpZGF0ZVRva2VuUmVzcG9uc2UiJoLT5JMCICIbL2FwaS9p",
+            "bnRlcm5hbC9hdXRoL3ZhbGlkYXRlOgEqQroBChNjb20uYmxpemtpZS5hdXRo",
+            "LnYxQglBdXRoUHJvdG9QAVo6Z2l0aHViLmNvbS9xbGlxdWl6L2JsaXpraWUt",
+            "Y29udHJhY3RzL2dlbi9nby9hdXRoL3YxO2F1dGh2MaICA0JBWKoCD0JsaXpr",
+            "aWUuQXV0aC5WMcoCD0JsaXpraWVcQXV0aFxWMeICG0JsaXpraWVcQXV0aFxW",
+            "MVxHUEJNZXRhZGF0YeoCEUJsaXpraWU6OkF1dGg6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.Auth.V1.RegisterRequest), global::Blizkie.Auth.V1.RegisterRequest.Parser, new[]{ "Phone", "Password", "FullName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.Auth.V1.RegisterRequest), global::Blizkie.Auth.V1.RegisterRequest.Parser, new[]{ "Phone", "Email", "Password", "Name" }, new[]{ "Phone", "Email" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.Auth.V1.RegisterResponse), global::Blizkie.Auth.V1.RegisterResponse.Parser, new[]{ "UserId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.Auth.V1.LoginRequest), global::Blizkie.Auth.V1.LoginRequest.Parser, new[]{ "Phone", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.Auth.V1.LoginResponse), global::Blizkie.Auth.V1.LoginResponse.Parser, new[]{ "AccessToken", "RefreshToken" }, null, null, null, null),
@@ -99,8 +100,9 @@ namespace Blizkie.Auth.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegisterRequest(RegisterRequest other) : this() {
       phone_ = other.phone_;
+      email_ = other.email_;
       password_ = other.password_;
-      fullName_ = other.fullName_;
+      name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -112,18 +114,58 @@ namespace Blizkie.Auth.V1 {
 
     /// <summary>Field number for the "phone" field.</summary>
     public const int PhoneFieldNumber = 1;
-    private string phone_ = "";
+    private readonly static string PhoneDefaultValue = "";
+
+    private string phone_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Phone {
-      get { return phone_; }
+      get { return phone_ ?? PhoneDefaultValue; }
       set {
         phone_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "phone" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPhone {
+      get { return phone_ != null; }
+    }
+    /// <summary>Clears the value of the "phone" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPhone() {
+      phone_ = null;
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 2;
+    private readonly static string EmailDefaultValue = "";
+
+    private string email_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Email {
+      get { return email_ ?? EmailDefaultValue; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "email" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasEmail {
+      get { return email_ != null; }
+    }
+    /// <summary>Clears the value of the "email" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearEmail() {
+      email_ = null;
+    }
 
     /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 2;
+    public const int PasswordFieldNumber = 3;
     private string password_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,15 +176,15 @@ namespace Blizkie.Auth.V1 {
       }
     }
 
-    /// <summary>Field number for the "full_name" field.</summary>
-    public const int FullNameFieldNumber = 3;
-    private string fullName_ = "";
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 4;
+    private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FullName {
-      get { return fullName_; }
+    public string Name {
+      get { return name_; }
       set {
-        fullName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -162,8 +204,9 @@ namespace Blizkie.Auth.V1 {
         return true;
       }
       if (Phone != other.Phone) return false;
+      if (Email != other.Email) return false;
       if (Password != other.Password) return false;
-      if (FullName != other.FullName) return false;
+      if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -171,9 +214,10 @@ namespace Blizkie.Auth.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Phone.Length != 0) hash ^= Phone.GetHashCode();
+      if (HasPhone) hash ^= Phone.GetHashCode();
+      if (HasEmail) hash ^= Email.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
-      if (FullName.Length != 0) hash ^= FullName.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -192,17 +236,21 @@ namespace Blizkie.Auth.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         output.WriteRawTag(10);
         output.WriteString(Phone);
       }
-      if (Password.Length != 0) {
+      if (HasEmail) {
         output.WriteRawTag(18);
+        output.WriteString(Email);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Password);
       }
-      if (FullName.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(FullName);
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,17 +262,21 @@ namespace Blizkie.Auth.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         output.WriteRawTag(10);
         output.WriteString(Phone);
       }
-      if (Password.Length != 0) {
+      if (HasEmail) {
         output.WriteRawTag(18);
+        output.WriteString(Email);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Password);
       }
-      if (FullName.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(FullName);
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -236,14 +288,17 @@ namespace Blizkie.Auth.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Phone);
+      }
+      if (HasEmail) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
       if (Password.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
-      if (FullName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FullName);
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,14 +312,17 @@ namespace Blizkie.Auth.V1 {
       if (other == null) {
         return;
       }
-      if (other.Phone.Length != 0) {
+      if (other.HasPhone) {
         Phone = other.Phone;
+      }
+      if (other.HasEmail) {
+        Email = other.Email;
       }
       if (other.Password.Length != 0) {
         Password = other.Password;
       }
-      if (other.FullName.Length != 0) {
-        FullName = other.FullName;
+      if (other.Name.Length != 0) {
+        Name = other.Name;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -286,11 +344,15 @@ namespace Blizkie.Auth.V1 {
             break;
           }
           case 18: {
-            Password = input.ReadString();
+            Email = input.ReadString();
             break;
           }
           case 26: {
-            FullName = input.ReadString();
+            Password = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
             break;
           }
         }
@@ -313,11 +375,15 @@ namespace Blizkie.Auth.V1 {
             break;
           }
           case 18: {
-            Password = input.ReadString();
+            Email = input.ReadString();
             break;
           }
           case 26: {
-            FullName = input.ReadString();
+            Password = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
             break;
           }
         }

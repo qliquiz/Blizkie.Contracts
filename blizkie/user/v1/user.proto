@@ -17,8 +17,9 @@ service UserService {
 
 message SyncUserRequest {
   string user_id = 1;
-  string phone = 2;
-  string full_name = 3;
+  optional string phone = 2;
+  optional string email = 3;
+  string name = 4;
 }
 
 message SyncUserResponse {

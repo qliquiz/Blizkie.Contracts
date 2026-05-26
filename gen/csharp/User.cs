@@ -25,22 +25,23 @@ namespace Blizkie.User.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpibGl6a2llL3VzZXIvdjEvdXNlci5wcm90bxIPYmxpemtpZS51c2VyLnYx",
-            "Ghxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIl0KD1N5bmNVc2VyUmVx",
-            "dWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSFAoFcGhvbmUYAiABKAlS",
-            "BXBob25lEhsKCWZ1bGxfbmFtZRgDIAEoCVIIZnVsbE5hbWUiLAoQU3luY1Vz",
-            "ZXJSZXNwb25zZRIYCgdtZXNzYWdlGAEgASgJUgdtZXNzYWdlMoMBCgtVc2Vy",
-            "U2VydmljZRJ0CghTeW5jVXNlchIgLmJsaXpraWUudXNlci52MS5TeW5jVXNl",
-            "clJlcXVlc3QaIS5ibGl6a2llLnVzZXIudjEuU3luY1VzZXJSZXNwb25zZSIj",
-            "gtPkkwIdIhgvYXBpL2ludGVybmFsL3VzZXJzL3N5bmM6ASpCugEKE2NvbS5i",
-            "bGl6a2llLnVzZXIudjFCCVVzZXJQcm90b1ABWjpnaXRodWIuY29tL3FsaXF1",
-            "aXovYmxpemtpZS1jb250cmFjdHMvZ2VuL2dvL3VzZXIvdjE7dXNlcnYxogID",
-            "QlVYqgIPQmxpemtpZS5Vc2VyLlYxygIPQmxpemtpZVxVc2VyXFYx4gIbQmxp",
-            "emtpZVxVc2VyXFYxXEdQQk1ldGFkYXRh6gIRQmxpemtpZTo6VXNlcjo6VjFi",
-            "BnByb3RvMw=="));
+            "Ghxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIogBCg9TeW5jVXNlclJl",
+            "cXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEhkKBXBob25lGAIgASgJ",
+            "SABSBXBob25liAEBEhkKBWVtYWlsGAMgASgJSAFSBWVtYWlsiAEBEhIKBG5h",
+            "bWUYBCABKAlSBG5hbWVCCAoGX3Bob25lQggKBl9lbWFpbCIsChBTeW5jVXNl",
+            "clJlc3BvbnNlEhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2UygwEKC1VzZXJT",
+            "ZXJ2aWNlEnQKCFN5bmNVc2VyEiAuYmxpemtpZS51c2VyLnYxLlN5bmNVc2Vy",
+            "UmVxdWVzdBohLmJsaXpraWUudXNlci52MS5TeW5jVXNlclJlc3BvbnNlIiOC",
+            "0+STAh0iGC9hcGkvaW50ZXJuYWwvdXNlcnMvc3luYzoBKkK6AQoTY29tLmJs",
+            "aXpraWUudXNlci52MUIJVXNlclByb3RvUAFaOmdpdGh1Yi5jb20vcWxpcXVp",
+            "ei9ibGl6a2llLWNvbnRyYWN0cy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNC",
+            "VViqAg9CbGl6a2llLlVzZXIuVjHKAg9CbGl6a2llXFVzZXJcVjHiAhtCbGl6",
+            "a2llXFVzZXJcVjFcR1BCTWV0YWRhdGHqAhFCbGl6a2llOjpVc2VyOjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.User.V1.SyncUserRequest), global::Blizkie.User.V1.SyncUserRequest.Parser, new[]{ "UserId", "Phone", "FullName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.User.V1.SyncUserRequest), global::Blizkie.User.V1.SyncUserRequest.Parser, new[]{ "UserId", "Phone", "Email", "Name" }, new[]{ "Phone", "Email" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Blizkie.User.V1.SyncUserResponse), global::Blizkie.User.V1.SyncUserResponse.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
@@ -85,7 +86,8 @@ namespace Blizkie.User.V1 {
     public SyncUserRequest(SyncUserRequest other) : this() {
       userId_ = other.userId_;
       phone_ = other.phone_;
-      fullName_ = other.fullName_;
+      email_ = other.email_;
+      name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -109,25 +111,65 @@ namespace Blizkie.User.V1 {
 
     /// <summary>Field number for the "phone" field.</summary>
     public const int PhoneFieldNumber = 2;
-    private string phone_ = "";
+    private readonly static string PhoneDefaultValue = "";
+
+    private string phone_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Phone {
-      get { return phone_; }
+      get { return phone_ ?? PhoneDefaultValue; }
       set {
         phone_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-
-    /// <summary>Field number for the "full_name" field.</summary>
-    public const int FullNameFieldNumber = 3;
-    private string fullName_ = "";
+    /// <summary>Gets whether the "phone" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FullName {
-      get { return fullName_; }
+    public bool HasPhone {
+      get { return phone_ != null; }
+    }
+    /// <summary>Clears the value of the "phone" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPhone() {
+      phone_ = null;
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 3;
+    private readonly static string EmailDefaultValue = "";
+
+    private string email_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Email {
+      get { return email_ ?? EmailDefaultValue; }
       set {
-        fullName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "email" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasEmail {
+      get { return email_ != null; }
+    }
+    /// <summary>Clears the value of the "email" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearEmail() {
+      email_ = null;
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 4;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -148,7 +190,8 @@ namespace Blizkie.User.V1 {
       }
       if (UserId != other.UserId) return false;
       if (Phone != other.Phone) return false;
-      if (FullName != other.FullName) return false;
+      if (Email != other.Email) return false;
+      if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -157,8 +200,9 @@ namespace Blizkie.User.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (UserId.Length != 0) hash ^= UserId.GetHashCode();
-      if (Phone.Length != 0) hash ^= Phone.GetHashCode();
-      if (FullName.Length != 0) hash ^= FullName.GetHashCode();
+      if (HasPhone) hash ^= Phone.GetHashCode();
+      if (HasEmail) hash ^= Email.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,13 +225,17 @@ namespace Blizkie.User.V1 {
         output.WriteRawTag(10);
         output.WriteString(UserId);
       }
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         output.WriteRawTag(18);
         output.WriteString(Phone);
       }
-      if (FullName.Length != 0) {
+      if (HasEmail) {
         output.WriteRawTag(26);
-        output.WriteString(FullName);
+        output.WriteString(Email);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -203,13 +251,17 @@ namespace Blizkie.User.V1 {
         output.WriteRawTag(10);
         output.WriteString(UserId);
       }
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         output.WriteRawTag(18);
         output.WriteString(Phone);
       }
-      if (FullName.Length != 0) {
+      if (HasEmail) {
         output.WriteRawTag(26);
-        output.WriteString(FullName);
+        output.WriteString(Email);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -224,11 +276,14 @@ namespace Blizkie.User.V1 {
       if (UserId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
       }
-      if (Phone.Length != 0) {
+      if (HasPhone) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Phone);
       }
-      if (FullName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FullName);
+      if (HasEmail) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -245,11 +300,14 @@ namespace Blizkie.User.V1 {
       if (other.UserId.Length != 0) {
         UserId = other.UserId;
       }
-      if (other.Phone.Length != 0) {
+      if (other.HasPhone) {
         Phone = other.Phone;
       }
-      if (other.FullName.Length != 0) {
-        FullName = other.FullName;
+      if (other.HasEmail) {
+        Email = other.Email;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -275,7 +333,11 @@ namespace Blizkie.User.V1 {
             break;
           }
           case 26: {
-            FullName = input.ReadString();
+            Email = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
             break;
           }
         }
@@ -302,7 +364,11 @@ namespace Blizkie.User.V1 {
             break;
           }
           case 26: {
-            FullName = input.ReadString();
+            Email = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
             break;
           }
         }

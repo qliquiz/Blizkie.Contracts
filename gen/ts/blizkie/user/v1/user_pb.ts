@@ -16,14 +16,19 @@ export class SyncUserRequest extends Message<SyncUserRequest> {
   userId = "";
 
   /**
-   * @generated from field: string phone = 2;
+   * @generated from field: optional string phone = 2;
    */
-  phone = "";
+  phone?: string;
 
   /**
-   * @generated from field: string full_name = 3;
+   * @generated from field: optional string email = 3;
    */
-  fullName = "";
+  email?: string;
+
+  /**
+   * @generated from field: string name = 4;
+   */
+  name = "";
 
   constructor(data?: PartialMessage<SyncUserRequest>) {
     super();
@@ -34,8 +39,9 @@ export class SyncUserRequest extends Message<SyncUserRequest> {
   static readonly typeName = "blizkie.user.v1.SyncUserRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "phone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "full_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "phone", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SyncUserRequest {
