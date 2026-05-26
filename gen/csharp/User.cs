@@ -34,7 +34,7 @@ namespace Blizkie.User.V1 {
             "UmVxdWVzdBohLmJsaXpraWUudXNlci52MS5TeW5jVXNlclJlc3BvbnNlIiOC",
             "0+STAh0iGC9hcGkvaW50ZXJuYWwvdXNlcnMvc3luYzoBKkK6AQoTY29tLmJs",
             "aXpraWUudXNlci52MUIJVXNlclByb3RvUAFaOmdpdGh1Yi5jb20vcWxpcXVp",
-            "ei9ibGl6a2llLWNvbnRyYWN0cy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNC",
+            "ei9CbGl6a2llLkNvbnRyYWN0cy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNC",
             "VViqAg9CbGl6a2llLlVzZXIuVjHKAg9CbGl6a2llXFVzZXJcVjHiAhtCbGl6",
             "a2llXFVzZXJcVjFcR1BCTWV0YWRhdGHqAhFCbGl6a2llOjpVc2VyOjpWMWIG",
             "cHJvdG8z"));

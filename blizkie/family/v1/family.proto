@@ -4,7 +4,7 @@ package blizkie.family.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "github.com/qliquiz/blizkie-contracts/gen/go/family/v1;familyv1";
+option go_package = "github.com/qliquiz/Blizkie.Contracts/gen/go/family/v1;familyv1";
 
 service FamilyService {
   rpc CreateFamily(CreateFamilyRequest) returns (CreateFamilyResponse) {
