@@ -32,12 +32,12 @@ namespace Blizkie.User.V1 {
             "clJlc3BvbnNlEhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2UygwEKC1VzZXJT",
             "ZXJ2aWNlEnQKCFN5bmNVc2VyEiAuYmxpemtpZS51c2VyLnYxLlN5bmNVc2Vy",
             "UmVxdWVzdBohLmJsaXpraWUudXNlci52MS5TeW5jVXNlclJlc3BvbnNlIiOC",
-            "0+STAh0iGC9hcGkvaW50ZXJuYWwvdXNlcnMvc3luYzoBKkK6AQoTY29tLmJs",
-            "aXpraWUudXNlci52MUIJVXNlclByb3RvUAFaOmdpdGh1Yi5jb20vcWxpcXVp",
-            "ei9CbGl6a2llLkNvbnRyYWN0cy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNC",
-            "VViqAg9CbGl6a2llLlVzZXIuVjHKAg9CbGl6a2llXFVzZXJcVjHiAhtCbGl6",
-            "a2llXFVzZXJcVjFcR1BCTWV0YWRhdGHqAhFCbGl6a2llOjpVc2VyOjpWMWIG",
-            "cHJvdG8z"));
+            "0+STAh0iGC9hcGkvaW50ZXJuYWwvdXNlcnMvc3luYzoBKkLCAQoTY29tLmJs",
+            "aXpraWUudXNlci52MUIJVXNlclByb3RvUAFaQmdpdGh1Yi5jb20vcWxpcXVp",
+            "ei9CbGl6a2llLkNvbnRyYWN0cy9nZW4vZ28vYmxpemtpZS91c2VyL3YxO3Vz",
+            "ZXJ2MaICA0JVWKoCD0JsaXpraWUuVXNlci5WMcoCD0JsaXpraWVcVXNlclxW",
+            "MeICG0JsaXpraWVcVXNlclxWMVxHUEJNZXRhZGF0YeoCEUJsaXpraWU6OlVz",
+            "ZXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

@@ -4,7 +4,7 @@ package blizkie.user.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "github.com/qliquiz/Blizkie.Contracts/gen/go/user/v1;userv1";
+option go_package = "github.com/qliquiz/Blizkie.Contracts/gen/go/blizkie/user/v1;userv1";
 
 service UserService {
   rpc SyncUser(SyncUserRequest) returns (SyncUserResponse) {
