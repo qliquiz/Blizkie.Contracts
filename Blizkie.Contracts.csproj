@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <IsPackable>true</IsPackable>
+    <PackageId>Blizkie.Contracts</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>qliquiz</Authors>
+    <Description>Shared protobuf/gRPC C# contracts for Blizkie services.</Description>
+    <RepositoryUrl>https://github.com/qliquiz/Blizkie.Contracts</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="gen/csharp/*.cs" Link="Generated/Contracts/%(Filename)%(Extension)" />
+    <None Include="README.md" Pack="true" PackagePath="/" />
+    <None Include="blizkie/**/*.proto" Pack="true" PackagePath="proto/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.17.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.34.1" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.80.0" />
+  </ItemGroup>
+
+</Project>
