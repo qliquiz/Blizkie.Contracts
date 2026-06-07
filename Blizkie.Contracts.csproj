@@ -7,7 +7,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <IsPackable>true</IsPackable>
     <PackageId>Blizkie.Contracts</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>qliquiz</Authors>
     <Description>Shared protobuf/gRPC C# contracts for Blizkie services.</Description>
     <RepositoryUrl>https://github.com/qliquiz/Blizkie.Contracts</RepositoryUrl>

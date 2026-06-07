@@ -1,0 +1,34 @@
+name: Publish NuGet package
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "contracts-v*"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore Blizkie.Contracts.csproj
+
+      - name: Pack
+        run: dotnet pack Blizkie.Contracts.csproj -c Release -o artifacts/packages
+
+      - name: Add GitHub Packages source
+        run: dotnet nuget add source --username "${{ github.actor }}" --password "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/qliquiz/index.json"
+
+      - name: Push
+        run: dotnet nuget push "artifacts/packages/*.nupkg" --source github --api-key "${{ secrets.GITHUB_TOKEN }}" --skip-duplicate
