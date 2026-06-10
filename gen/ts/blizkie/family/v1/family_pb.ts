@@ -395,3 +395,551 @@ export class JoinFamilyResponse extends Message<JoinFamilyResponse> {
   }
 }
 
+/**
+ * @generated from message blizkie.family.v1.LeaveFamilyRequest
+ */
+export class LeaveFamilyRequest extends Message<LeaveFamilyRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  constructor(data?: PartialMessage<LeaveFamilyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.LeaveFamilyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveFamilyRequest {
+    return new LeaveFamilyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveFamilyRequest {
+    return new LeaveFamilyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveFamilyRequest {
+    return new LeaveFamilyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveFamilyRequest | PlainMessage<LeaveFamilyRequest> | undefined, b: LeaveFamilyRequest | PlainMessage<LeaveFamilyRequest> | undefined): boolean {
+    return proto3.util.equals(LeaveFamilyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.LeaveFamilyResponse
+ */
+export class LeaveFamilyResponse extends Message<LeaveFamilyResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<LeaveFamilyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.LeaveFamilyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveFamilyResponse {
+    return new LeaveFamilyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveFamilyResponse {
+    return new LeaveFamilyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveFamilyResponse {
+    return new LeaveFamilyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveFamilyResponse | PlainMessage<LeaveFamilyResponse> | undefined, b: LeaveFamilyResponse | PlainMessage<LeaveFamilyResponse> | undefined): boolean {
+    return proto3.util.equals(LeaveFamilyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.KickMemberRequest
+ */
+export class KickMemberRequest extends Message<KickMemberRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  /**
+   * @generated from field: string user_id_to_kick = 2;
+   */
+  userIdToKick = "";
+
+  constructor(data?: PartialMessage<KickMemberRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.KickMemberRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id_to_kick", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): KickMemberRequest {
+    return new KickMemberRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): KickMemberRequest {
+    return new KickMemberRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): KickMemberRequest {
+    return new KickMemberRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: KickMemberRequest | PlainMessage<KickMemberRequest> | undefined, b: KickMemberRequest | PlainMessage<KickMemberRequest> | undefined): boolean {
+    return proto3.util.equals(KickMemberRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.KickMemberResponse
+ */
+export class KickMemberResponse extends Message<KickMemberResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<KickMemberResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.KickMemberResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): KickMemberResponse {
+    return new KickMemberResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): KickMemberResponse {
+    return new KickMemberResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): KickMemberResponse {
+    return new KickMemberResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: KickMemberResponse | PlainMessage<KickMemberResponse> | undefined, b: KickMemberResponse | PlainMessage<KickMemberResponse> | undefined): boolean {
+    return proto3.util.equals(KickMemberResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.ChangeMemberRoleRequest
+ */
+export class ChangeMemberRoleRequest extends Message<ChangeMemberRoleRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  /**
+   * @generated from field: string target_user_id = 2;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: blizkie.family.v1.FamilyRole role = 3;
+   */
+  role = FamilyRole.UNSPECIFIED;
+
+  constructor(data?: PartialMessage<ChangeMemberRoleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.ChangeMemberRoleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "enum", T: proto3.getEnumType(FamilyRole) },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeMemberRoleRequest {
+    return new ChangeMemberRoleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeMemberRoleRequest {
+    return new ChangeMemberRoleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeMemberRoleRequest {
+    return new ChangeMemberRoleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangeMemberRoleRequest | PlainMessage<ChangeMemberRoleRequest> | undefined, b: ChangeMemberRoleRequest | PlainMessage<ChangeMemberRoleRequest> | undefined): boolean {
+    return proto3.util.equals(ChangeMemberRoleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.ChangeMemberRoleResponse
+ */
+export class ChangeMemberRoleResponse extends Message<ChangeMemberRoleResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<ChangeMemberRoleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.ChangeMemberRoleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeMemberRoleResponse {
+    return new ChangeMemberRoleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeMemberRoleResponse {
+    return new ChangeMemberRoleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeMemberRoleResponse {
+    return new ChangeMemberRoleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangeMemberRoleResponse | PlainMessage<ChangeMemberRoleResponse> | undefined, b: ChangeMemberRoleResponse | PlainMessage<ChangeMemberRoleResponse> | undefined): boolean {
+    return proto3.util.equals(ChangeMemberRoleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.ChangeDisplayNameRequest
+ */
+export class ChangeDisplayNameRequest extends Message<ChangeDisplayNameRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  /**
+   * @generated from field: string display_name = 2;
+   */
+  displayName = "";
+
+  constructor(data?: PartialMessage<ChangeDisplayNameRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.ChangeDisplayNameRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeDisplayNameRequest {
+    return new ChangeDisplayNameRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeDisplayNameRequest {
+    return new ChangeDisplayNameRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeDisplayNameRequest {
+    return new ChangeDisplayNameRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangeDisplayNameRequest | PlainMessage<ChangeDisplayNameRequest> | undefined, b: ChangeDisplayNameRequest | PlainMessage<ChangeDisplayNameRequest> | undefined): boolean {
+    return proto3.util.equals(ChangeDisplayNameRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.ChangeDisplayNameResponse
+ */
+export class ChangeDisplayNameResponse extends Message<ChangeDisplayNameResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<ChangeDisplayNameResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.ChangeDisplayNameResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeDisplayNameResponse {
+    return new ChangeDisplayNameResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeDisplayNameResponse {
+    return new ChangeDisplayNameResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeDisplayNameResponse {
+    return new ChangeDisplayNameResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ChangeDisplayNameResponse | PlainMessage<ChangeDisplayNameResponse> | undefined, b: ChangeDisplayNameResponse | PlainMessage<ChangeDisplayNameResponse> | undefined): boolean {
+    return proto3.util.equals(ChangeDisplayNameResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.UpdateFamilyNameRequest
+ */
+export class UpdateFamilyNameRequest extends Message<UpdateFamilyNameRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  constructor(data?: PartialMessage<UpdateFamilyNameRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.UpdateFamilyNameRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFamilyNameRequest {
+    return new UpdateFamilyNameRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFamilyNameRequest {
+    return new UpdateFamilyNameRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFamilyNameRequest {
+    return new UpdateFamilyNameRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateFamilyNameRequest | PlainMessage<UpdateFamilyNameRequest> | undefined, b: UpdateFamilyNameRequest | PlainMessage<UpdateFamilyNameRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateFamilyNameRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.UpdateFamilyNameResponse
+ */
+export class UpdateFamilyNameResponse extends Message<UpdateFamilyNameResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<UpdateFamilyNameResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.UpdateFamilyNameResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFamilyNameResponse {
+    return new UpdateFamilyNameResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFamilyNameResponse {
+    return new UpdateFamilyNameResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFamilyNameResponse {
+    return new UpdateFamilyNameResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateFamilyNameResponse | PlainMessage<UpdateFamilyNameResponse> | undefined, b: UpdateFamilyNameResponse | PlainMessage<UpdateFamilyNameResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateFamilyNameResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.DeleteFamilyRequest
+ */
+export class DeleteFamilyRequest extends Message<DeleteFamilyRequest> {
+  /**
+   * @generated from field: string family_id = 1;
+   */
+  familyId = "";
+
+  constructor(data?: PartialMessage<DeleteFamilyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.DeleteFamilyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "family_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFamilyRequest {
+    return new DeleteFamilyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFamilyRequest {
+    return new DeleteFamilyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFamilyRequest {
+    return new DeleteFamilyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteFamilyRequest | PlainMessage<DeleteFamilyRequest> | undefined, b: DeleteFamilyRequest | PlainMessage<DeleteFamilyRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteFamilyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.DeleteFamilyResponse
+ */
+export class DeleteFamilyResponse extends Message<DeleteFamilyResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<DeleteFamilyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.DeleteFamilyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFamilyResponse {
+    return new DeleteFamilyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFamilyResponse {
+    return new DeleteFamilyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFamilyResponse {
+    return new DeleteFamilyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteFamilyResponse | PlainMessage<DeleteFamilyResponse> | undefined, b: DeleteFamilyResponse | PlainMessage<DeleteFamilyResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteFamilyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.RevokeInviteRequest
+ */
+export class RevokeInviteRequest extends Message<RevokeInviteRequest> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  constructor(data?: PartialMessage<RevokeInviteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.RevokeInviteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeInviteRequest {
+    return new RevokeInviteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeInviteRequest {
+    return new RevokeInviteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeInviteRequest {
+    return new RevokeInviteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeInviteRequest | PlainMessage<RevokeInviteRequest> | undefined, b: RevokeInviteRequest | PlainMessage<RevokeInviteRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeInviteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.family.v1.RevokeInviteResponse
+ */
+export class RevokeInviteResponse extends Message<RevokeInviteResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<RevokeInviteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.family.v1.RevokeInviteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeInviteResponse {
+    return new RevokeInviteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeInviteResponse {
+    return new RevokeInviteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeInviteResponse {
+    return new RevokeInviteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeInviteResponse | PlainMessage<RevokeInviteResponse> | undefined, b: RevokeInviteResponse | PlainMessage<RevokeInviteResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeInviteResponse, a, b);
+  }
+}
+

@@ -32,6 +32,51 @@ service FamilyService {
       body: "*"
     };
   }
+
+  rpc LeaveFamily(LeaveFamilyRequest) returns (LeaveFamilyResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/families/{family_id}/leave"
+    };
+  }
+
+  rpc KickMember(KickMemberRequest) returns (KickMemberResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/families/{family_id}/members/{user_id_to_kick}"
+    };
+  }
+
+  rpc ChangeMemberRole(ChangeMemberRoleRequest) returns (ChangeMemberRoleResponse) {
+    option (google.api.http) = {
+      patch: "/api/v1/families/{family_id}/members/{target_user_id}/role"
+      body: "*"
+    };
+  }
+
+  rpc ChangeDisplayName(ChangeDisplayNameRequest) returns (ChangeDisplayNameResponse) {
+    option (google.api.http) = {
+      patch: "/api/v1/families/{family_id}/members/me/display-name"
+      body: "*"
+    };
+  }
+
+  rpc UpdateFamilyName(UpdateFamilyNameRequest) returns (UpdateFamilyNameResponse) {
+    option (google.api.http) = {
+      patch: "/api/v1/families/{family_id}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteFamily(DeleteFamilyRequest) returns (DeleteFamilyResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/families/{family_id}"
+    };
+  }
+
+  rpc RevokeInvite(RevokeInviteRequest) returns (RevokeInviteResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/families/invites/{code}"
+    };
+  }
 }
 
 enum FamilyRole {
@@ -80,4 +125,65 @@ message JoinFamilyRequest {
 
 message JoinFamilyResponse {
   string family_id = 1;
+}
+
+message LeaveFamilyRequest {
+  string family_id = 1;
+}
+
+message LeaveFamilyResponse {
+  string message = 1;
+}
+
+message KickMemberRequest {
+  string family_id = 1;
+  string user_id_to_kick = 2;
+}
+
+message KickMemberResponse {
+  string message = 1;
+}
+
+message ChangeMemberRoleRequest {
+  string family_id = 1;
+  string target_user_id = 2;
+  FamilyRole role = 3;
+}
+
+message ChangeMemberRoleResponse {
+  string message = 1;
+}
+
+message ChangeDisplayNameRequest {
+  string family_id = 1;
+  string display_name = 2;
+}
+
+message ChangeDisplayNameResponse {
+  string message = 1;
+}
+
+message UpdateFamilyNameRequest {
+  string family_id = 1;
+  string name = 2;
+}
+
+message UpdateFamilyNameResponse {
+  string message = 1;
+}
+
+message DeleteFamilyRequest {
+  string family_id = 1;
+}
+
+message DeleteFamilyResponse {
+  string message = 1;
+}
+
+message RevokeInviteRequest {
+  string code = 1;
+}
+
+message RevokeInviteResponse {
+  string message = 1;
 }

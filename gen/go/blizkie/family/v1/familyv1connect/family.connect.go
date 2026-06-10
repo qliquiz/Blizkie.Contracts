@@ -45,6 +45,27 @@ const (
 	// FamilyServiceJoinFamilyProcedure is the fully-qualified name of the FamilyService's JoinFamily
 	// RPC.
 	FamilyServiceJoinFamilyProcedure = "/blizkie.family.v1.FamilyService/JoinFamily"
+	// FamilyServiceLeaveFamilyProcedure is the fully-qualified name of the FamilyService's LeaveFamily
+	// RPC.
+	FamilyServiceLeaveFamilyProcedure = "/blizkie.family.v1.FamilyService/LeaveFamily"
+	// FamilyServiceKickMemberProcedure is the fully-qualified name of the FamilyService's KickMember
+	// RPC.
+	FamilyServiceKickMemberProcedure = "/blizkie.family.v1.FamilyService/KickMember"
+	// FamilyServiceChangeMemberRoleProcedure is the fully-qualified name of the FamilyService's
+	// ChangeMemberRole RPC.
+	FamilyServiceChangeMemberRoleProcedure = "/blizkie.family.v1.FamilyService/ChangeMemberRole"
+	// FamilyServiceChangeDisplayNameProcedure is the fully-qualified name of the FamilyService's
+	// ChangeDisplayName RPC.
+	FamilyServiceChangeDisplayNameProcedure = "/blizkie.family.v1.FamilyService/ChangeDisplayName"
+	// FamilyServiceUpdateFamilyNameProcedure is the fully-qualified name of the FamilyService's
+	// UpdateFamilyName RPC.
+	FamilyServiceUpdateFamilyNameProcedure = "/blizkie.family.v1.FamilyService/UpdateFamilyName"
+	// FamilyServiceDeleteFamilyProcedure is the fully-qualified name of the FamilyService's
+	// DeleteFamily RPC.
+	FamilyServiceDeleteFamilyProcedure = "/blizkie.family.v1.FamilyService/DeleteFamily"
+	// FamilyServiceRevokeInviteProcedure is the fully-qualified name of the FamilyService's
+	// RevokeInvite RPC.
+	FamilyServiceRevokeInviteProcedure = "/blizkie.family.v1.FamilyService/RevokeInvite"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
@@ -54,6 +75,13 @@ var (
 	familyServiceGetMyFamilyMethodDescriptor        = familyServiceServiceDescriptor.Methods().ByName("GetMyFamily")
 	familyServiceGenerateInviteCodeMethodDescriptor = familyServiceServiceDescriptor.Methods().ByName("GenerateInviteCode")
 	familyServiceJoinFamilyMethodDescriptor         = familyServiceServiceDescriptor.Methods().ByName("JoinFamily")
+	familyServiceLeaveFamilyMethodDescriptor        = familyServiceServiceDescriptor.Methods().ByName("LeaveFamily")
+	familyServiceKickMemberMethodDescriptor         = familyServiceServiceDescriptor.Methods().ByName("KickMember")
+	familyServiceChangeMemberRoleMethodDescriptor   = familyServiceServiceDescriptor.Methods().ByName("ChangeMemberRole")
+	familyServiceChangeDisplayNameMethodDescriptor  = familyServiceServiceDescriptor.Methods().ByName("ChangeDisplayName")
+	familyServiceUpdateFamilyNameMethodDescriptor   = familyServiceServiceDescriptor.Methods().ByName("UpdateFamilyName")
+	familyServiceDeleteFamilyMethodDescriptor       = familyServiceServiceDescriptor.Methods().ByName("DeleteFamily")
+	familyServiceRevokeInviteMethodDescriptor       = familyServiceServiceDescriptor.Methods().ByName("RevokeInvite")
 )
 
 // FamilyServiceClient is a client for the blizkie.family.v1.FamilyService service.
@@ -62,6 +90,13 @@ type FamilyServiceClient interface {
 	GetMyFamily(context.Context, *connect.Request[v1.GetMyFamilyRequest]) (*connect.Response[v1.GetMyFamilyResponse], error)
 	GenerateInviteCode(context.Context, *connect.Request[v1.GenerateInviteCodeRequest]) (*connect.Response[v1.GenerateInviteCodeResponse], error)
 	JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error)
+	LeaveFamily(context.Context, *connect.Request[v1.LeaveFamilyRequest]) (*connect.Response[v1.LeaveFamilyResponse], error)
+	KickMember(context.Context, *connect.Request[v1.KickMemberRequest]) (*connect.Response[v1.KickMemberResponse], error)
+	ChangeMemberRole(context.Context, *connect.Request[v1.ChangeMemberRoleRequest]) (*connect.Response[v1.ChangeMemberRoleResponse], error)
+	ChangeDisplayName(context.Context, *connect.Request[v1.ChangeDisplayNameRequest]) (*connect.Response[v1.ChangeDisplayNameResponse], error)
+	UpdateFamilyName(context.Context, *connect.Request[v1.UpdateFamilyNameRequest]) (*connect.Response[v1.UpdateFamilyNameResponse], error)
+	DeleteFamily(context.Context, *connect.Request[v1.DeleteFamilyRequest]) (*connect.Response[v1.DeleteFamilyResponse], error)
+	RevokeInvite(context.Context, *connect.Request[v1.RevokeInviteRequest]) (*connect.Response[v1.RevokeInviteResponse], error)
 }
 
 // NewFamilyServiceClient constructs a client for the blizkie.family.v1.FamilyService service. By
@@ -98,6 +133,48 @@ func NewFamilyServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(familyServiceJoinFamilyMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		leaveFamily: connect.NewClient[v1.LeaveFamilyRequest, v1.LeaveFamilyResponse](
+			httpClient,
+			baseURL+FamilyServiceLeaveFamilyProcedure,
+			connect.WithSchema(familyServiceLeaveFamilyMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		kickMember: connect.NewClient[v1.KickMemberRequest, v1.KickMemberResponse](
+			httpClient,
+			baseURL+FamilyServiceKickMemberProcedure,
+			connect.WithSchema(familyServiceKickMemberMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		changeMemberRole: connect.NewClient[v1.ChangeMemberRoleRequest, v1.ChangeMemberRoleResponse](
+			httpClient,
+			baseURL+FamilyServiceChangeMemberRoleProcedure,
+			connect.WithSchema(familyServiceChangeMemberRoleMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		changeDisplayName: connect.NewClient[v1.ChangeDisplayNameRequest, v1.ChangeDisplayNameResponse](
+			httpClient,
+			baseURL+FamilyServiceChangeDisplayNameProcedure,
+			connect.WithSchema(familyServiceChangeDisplayNameMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		updateFamilyName: connect.NewClient[v1.UpdateFamilyNameRequest, v1.UpdateFamilyNameResponse](
+			httpClient,
+			baseURL+FamilyServiceUpdateFamilyNameProcedure,
+			connect.WithSchema(familyServiceUpdateFamilyNameMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		deleteFamily: connect.NewClient[v1.DeleteFamilyRequest, v1.DeleteFamilyResponse](
+			httpClient,
+			baseURL+FamilyServiceDeleteFamilyProcedure,
+			connect.WithSchema(familyServiceDeleteFamilyMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		revokeInvite: connect.NewClient[v1.RevokeInviteRequest, v1.RevokeInviteResponse](
+			httpClient,
+			baseURL+FamilyServiceRevokeInviteProcedure,
+			connect.WithSchema(familyServiceRevokeInviteMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -107,6 +184,13 @@ type familyServiceClient struct {
 	getMyFamily        *connect.Client[v1.GetMyFamilyRequest, v1.GetMyFamilyResponse]
 	generateInviteCode *connect.Client[v1.GenerateInviteCodeRequest, v1.GenerateInviteCodeResponse]
 	joinFamily         *connect.Client[v1.JoinFamilyRequest, v1.JoinFamilyResponse]
+	leaveFamily        *connect.Client[v1.LeaveFamilyRequest, v1.LeaveFamilyResponse]
+	kickMember         *connect.Client[v1.KickMemberRequest, v1.KickMemberResponse]
+	changeMemberRole   *connect.Client[v1.ChangeMemberRoleRequest, v1.ChangeMemberRoleResponse]
+	changeDisplayName  *connect.Client[v1.ChangeDisplayNameRequest, v1.ChangeDisplayNameResponse]
+	updateFamilyName   *connect.Client[v1.UpdateFamilyNameRequest, v1.UpdateFamilyNameResponse]
+	deleteFamily       *connect.Client[v1.DeleteFamilyRequest, v1.DeleteFamilyResponse]
+	revokeInvite       *connect.Client[v1.RevokeInviteRequest, v1.RevokeInviteResponse]
 }
 
 // CreateFamily calls blizkie.family.v1.FamilyService.CreateFamily.
@@ -129,12 +213,54 @@ func (c *familyServiceClient) JoinFamily(ctx context.Context, req *connect.Reque
 	return c.joinFamily.CallUnary(ctx, req)
 }
 
+// LeaveFamily calls blizkie.family.v1.FamilyService.LeaveFamily.
+func (c *familyServiceClient) LeaveFamily(ctx context.Context, req *connect.Request[v1.LeaveFamilyRequest]) (*connect.Response[v1.LeaveFamilyResponse], error) {
+	return c.leaveFamily.CallUnary(ctx, req)
+}
+
+// KickMember calls blizkie.family.v1.FamilyService.KickMember.
+func (c *familyServiceClient) KickMember(ctx context.Context, req *connect.Request[v1.KickMemberRequest]) (*connect.Response[v1.KickMemberResponse], error) {
+	return c.kickMember.CallUnary(ctx, req)
+}
+
+// ChangeMemberRole calls blizkie.family.v1.FamilyService.ChangeMemberRole.
+func (c *familyServiceClient) ChangeMemberRole(ctx context.Context, req *connect.Request[v1.ChangeMemberRoleRequest]) (*connect.Response[v1.ChangeMemberRoleResponse], error) {
+	return c.changeMemberRole.CallUnary(ctx, req)
+}
+
+// ChangeDisplayName calls blizkie.family.v1.FamilyService.ChangeDisplayName.
+func (c *familyServiceClient) ChangeDisplayName(ctx context.Context, req *connect.Request[v1.ChangeDisplayNameRequest]) (*connect.Response[v1.ChangeDisplayNameResponse], error) {
+	return c.changeDisplayName.CallUnary(ctx, req)
+}
+
+// UpdateFamilyName calls blizkie.family.v1.FamilyService.UpdateFamilyName.
+func (c *familyServiceClient) UpdateFamilyName(ctx context.Context, req *connect.Request[v1.UpdateFamilyNameRequest]) (*connect.Response[v1.UpdateFamilyNameResponse], error) {
+	return c.updateFamilyName.CallUnary(ctx, req)
+}
+
+// DeleteFamily calls blizkie.family.v1.FamilyService.DeleteFamily.
+func (c *familyServiceClient) DeleteFamily(ctx context.Context, req *connect.Request[v1.DeleteFamilyRequest]) (*connect.Response[v1.DeleteFamilyResponse], error) {
+	return c.deleteFamily.CallUnary(ctx, req)
+}
+
+// RevokeInvite calls blizkie.family.v1.FamilyService.RevokeInvite.
+func (c *familyServiceClient) RevokeInvite(ctx context.Context, req *connect.Request[v1.RevokeInviteRequest]) (*connect.Response[v1.RevokeInviteResponse], error) {
+	return c.revokeInvite.CallUnary(ctx, req)
+}
+
 // FamilyServiceHandler is an implementation of the blizkie.family.v1.FamilyService service.
 type FamilyServiceHandler interface {
 	CreateFamily(context.Context, *connect.Request[v1.CreateFamilyRequest]) (*connect.Response[v1.CreateFamilyResponse], error)
 	GetMyFamily(context.Context, *connect.Request[v1.GetMyFamilyRequest]) (*connect.Response[v1.GetMyFamilyResponse], error)
 	GenerateInviteCode(context.Context, *connect.Request[v1.GenerateInviteCodeRequest]) (*connect.Response[v1.GenerateInviteCodeResponse], error)
 	JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error)
+	LeaveFamily(context.Context, *connect.Request[v1.LeaveFamilyRequest]) (*connect.Response[v1.LeaveFamilyResponse], error)
+	KickMember(context.Context, *connect.Request[v1.KickMemberRequest]) (*connect.Response[v1.KickMemberResponse], error)
+	ChangeMemberRole(context.Context, *connect.Request[v1.ChangeMemberRoleRequest]) (*connect.Response[v1.ChangeMemberRoleResponse], error)
+	ChangeDisplayName(context.Context, *connect.Request[v1.ChangeDisplayNameRequest]) (*connect.Response[v1.ChangeDisplayNameResponse], error)
+	UpdateFamilyName(context.Context, *connect.Request[v1.UpdateFamilyNameRequest]) (*connect.Response[v1.UpdateFamilyNameResponse], error)
+	DeleteFamily(context.Context, *connect.Request[v1.DeleteFamilyRequest]) (*connect.Response[v1.DeleteFamilyResponse], error)
+	RevokeInvite(context.Context, *connect.Request[v1.RevokeInviteRequest]) (*connect.Response[v1.RevokeInviteResponse], error)
 }
 
 // NewFamilyServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -167,6 +293,48 @@ func NewFamilyServiceHandler(svc FamilyServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(familyServiceJoinFamilyMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	familyServiceLeaveFamilyHandler := connect.NewUnaryHandler(
+		FamilyServiceLeaveFamilyProcedure,
+		svc.LeaveFamily,
+		connect.WithSchema(familyServiceLeaveFamilyMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceKickMemberHandler := connect.NewUnaryHandler(
+		FamilyServiceKickMemberProcedure,
+		svc.KickMember,
+		connect.WithSchema(familyServiceKickMemberMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceChangeMemberRoleHandler := connect.NewUnaryHandler(
+		FamilyServiceChangeMemberRoleProcedure,
+		svc.ChangeMemberRole,
+		connect.WithSchema(familyServiceChangeMemberRoleMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceChangeDisplayNameHandler := connect.NewUnaryHandler(
+		FamilyServiceChangeDisplayNameProcedure,
+		svc.ChangeDisplayName,
+		connect.WithSchema(familyServiceChangeDisplayNameMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceUpdateFamilyNameHandler := connect.NewUnaryHandler(
+		FamilyServiceUpdateFamilyNameProcedure,
+		svc.UpdateFamilyName,
+		connect.WithSchema(familyServiceUpdateFamilyNameMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceDeleteFamilyHandler := connect.NewUnaryHandler(
+		FamilyServiceDeleteFamilyProcedure,
+		svc.DeleteFamily,
+		connect.WithSchema(familyServiceDeleteFamilyMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	familyServiceRevokeInviteHandler := connect.NewUnaryHandler(
+		FamilyServiceRevokeInviteProcedure,
+		svc.RevokeInvite,
+		connect.WithSchema(familyServiceRevokeInviteMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/blizkie.family.v1.FamilyService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case FamilyServiceCreateFamilyProcedure:
@@ -177,6 +345,20 @@ func NewFamilyServiceHandler(svc FamilyServiceHandler, opts ...connect.HandlerOp
 			familyServiceGenerateInviteCodeHandler.ServeHTTP(w, r)
 		case FamilyServiceJoinFamilyProcedure:
 			familyServiceJoinFamilyHandler.ServeHTTP(w, r)
+		case FamilyServiceLeaveFamilyProcedure:
+			familyServiceLeaveFamilyHandler.ServeHTTP(w, r)
+		case FamilyServiceKickMemberProcedure:
+			familyServiceKickMemberHandler.ServeHTTP(w, r)
+		case FamilyServiceChangeMemberRoleProcedure:
+			familyServiceChangeMemberRoleHandler.ServeHTTP(w, r)
+		case FamilyServiceChangeDisplayNameProcedure:
+			familyServiceChangeDisplayNameHandler.ServeHTTP(w, r)
+		case FamilyServiceUpdateFamilyNameProcedure:
+			familyServiceUpdateFamilyNameHandler.ServeHTTP(w, r)
+		case FamilyServiceDeleteFamilyProcedure:
+			familyServiceDeleteFamilyHandler.ServeHTTP(w, r)
+		case FamilyServiceRevokeInviteProcedure:
+			familyServiceRevokeInviteHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -200,4 +382,32 @@ func (UnimplementedFamilyServiceHandler) GenerateInviteCode(context.Context, *co
 
 func (UnimplementedFamilyServiceHandler) JoinFamily(context.Context, *connect.Request[v1.JoinFamilyRequest]) (*connect.Response[v1.JoinFamilyResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.JoinFamily is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) LeaveFamily(context.Context, *connect.Request[v1.LeaveFamilyRequest]) (*connect.Response[v1.LeaveFamilyResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.LeaveFamily is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) KickMember(context.Context, *connect.Request[v1.KickMemberRequest]) (*connect.Response[v1.KickMemberResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.KickMember is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) ChangeMemberRole(context.Context, *connect.Request[v1.ChangeMemberRoleRequest]) (*connect.Response[v1.ChangeMemberRoleResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.ChangeMemberRole is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) ChangeDisplayName(context.Context, *connect.Request[v1.ChangeDisplayNameRequest]) (*connect.Response[v1.ChangeDisplayNameResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.ChangeDisplayName is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) UpdateFamilyName(context.Context, *connect.Request[v1.UpdateFamilyNameRequest]) (*connect.Response[v1.UpdateFamilyNameResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.UpdateFamilyName is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) DeleteFamily(context.Context, *connect.Request[v1.DeleteFamilyRequest]) (*connect.Response[v1.DeleteFamilyResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.DeleteFamily is not implemented"))
+}
+
+func (UnimplementedFamilyServiceHandler) RevokeInvite(context.Context, *connect.Request[v1.RevokeInviteRequest]) (*connect.Response[v1.RevokeInviteResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.family.v1.FamilyService.RevokeInvite is not implemented"))
 }

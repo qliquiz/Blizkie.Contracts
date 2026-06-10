@@ -35,17 +35,22 @@ const (
 const (
 	// UserServiceSyncUserProcedure is the fully-qualified name of the UserService's SyncUser RPC.
 	UserServiceSyncUserProcedure = "/blizkie.user.v1.UserService/SyncUser"
+	// UserServiceUpdateProfileProcedure is the fully-qualified name of the UserService's UpdateProfile
+	// RPC.
+	UserServiceUpdateProfileProcedure = "/blizkie.user.v1.UserService/UpdateProfile"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	userServiceServiceDescriptor        = v1.File_blizkie_user_v1_user_proto.Services().ByName("UserService")
-	userServiceSyncUserMethodDescriptor = userServiceServiceDescriptor.Methods().ByName("SyncUser")
+	userServiceServiceDescriptor             = v1.File_blizkie_user_v1_user_proto.Services().ByName("UserService")
+	userServiceSyncUserMethodDescriptor      = userServiceServiceDescriptor.Methods().ByName("SyncUser")
+	userServiceUpdateProfileMethodDescriptor = userServiceServiceDescriptor.Methods().ByName("UpdateProfile")
 )
 
 // UserServiceClient is a client for the blizkie.user.v1.UserService service.
 type UserServiceClient interface {
 	SyncUser(context.Context, *connect.Request[v1.SyncUserRequest]) (*connect.Response[v1.SyncUserResponse], error)
+	UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error)
 }
 
 // NewUserServiceClient constructs a client for the blizkie.user.v1.UserService service. By default,
@@ -64,12 +69,19 @@ func NewUserServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(userServiceSyncUserMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		updateProfile: connect.NewClient[v1.UpdateProfileRequest, v1.UpdateProfileResponse](
+			httpClient,
+			baseURL+UserServiceUpdateProfileProcedure,
+			connect.WithSchema(userServiceUpdateProfileMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // userServiceClient implements UserServiceClient.
 type userServiceClient struct {
-	syncUser *connect.Client[v1.SyncUserRequest, v1.SyncUserResponse]
+	syncUser      *connect.Client[v1.SyncUserRequest, v1.SyncUserResponse]
+	updateProfile *connect.Client[v1.UpdateProfileRequest, v1.UpdateProfileResponse]
 }
 
 // SyncUser calls blizkie.user.v1.UserService.SyncUser.
@@ -77,9 +89,15 @@ func (c *userServiceClient) SyncUser(ctx context.Context, req *connect.Request[v
 	return c.syncUser.CallUnary(ctx, req)
 }
 
+// UpdateProfile calls blizkie.user.v1.UserService.UpdateProfile.
+func (c *userServiceClient) UpdateProfile(ctx context.Context, req *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error) {
+	return c.updateProfile.CallUnary(ctx, req)
+}
+
 // UserServiceHandler is an implementation of the blizkie.user.v1.UserService service.
 type UserServiceHandler interface {
 	SyncUser(context.Context, *connect.Request[v1.SyncUserRequest]) (*connect.Response[v1.SyncUserResponse], error)
+	UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error)
 }
 
 // NewUserServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -94,10 +112,18 @@ func NewUserServiceHandler(svc UserServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(userServiceSyncUserMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	userServiceUpdateProfileHandler := connect.NewUnaryHandler(
+		UserServiceUpdateProfileProcedure,
+		svc.UpdateProfile,
+		connect.WithSchema(userServiceUpdateProfileMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/blizkie.user.v1.UserService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case UserServiceSyncUserProcedure:
 			userServiceSyncUserHandler.ServeHTTP(w, r)
+		case UserServiceUpdateProfileProcedure:
+			userServiceUpdateProfileHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -109,4 +135,8 @@ type UnimplementedUserServiceHandler struct{}
 
 func (UnimplementedUserServiceHandler) SyncUser(context.Context, *connect.Request[v1.SyncUserRequest]) (*connect.Response[v1.SyncUserResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.user.v1.UserService.SyncUser is not implemented"))
+}
+
+func (UnimplementedUserServiceHandler) UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("blizkie.user.v1.UserService.UpdateProfile is not implemented"))
 }

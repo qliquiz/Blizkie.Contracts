@@ -61,6 +61,34 @@ namespace Blizkie.Family.V1 {
     static readonly grpc::Marshaller<global::Blizkie.Family.V1.JoinFamilyRequest> __Marshaller_blizkie_family_v1_JoinFamilyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.JoinFamilyRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.Family.V1.JoinFamilyResponse> __Marshaller_blizkie_family_v1_JoinFamilyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.JoinFamilyResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.LeaveFamilyRequest> __Marshaller_blizkie_family_v1_LeaveFamilyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.LeaveFamilyRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.LeaveFamilyResponse> __Marshaller_blizkie_family_v1_LeaveFamilyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.LeaveFamilyResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.KickMemberRequest> __Marshaller_blizkie_family_v1_KickMemberRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.KickMemberRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.KickMemberResponse> __Marshaller_blizkie_family_v1_KickMemberResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.KickMemberResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.ChangeMemberRoleRequest> __Marshaller_blizkie_family_v1_ChangeMemberRoleRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.ChangeMemberRoleRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.ChangeMemberRoleResponse> __Marshaller_blizkie_family_v1_ChangeMemberRoleResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.ChangeMemberRoleResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.ChangeDisplayNameRequest> __Marshaller_blizkie_family_v1_ChangeDisplayNameRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.ChangeDisplayNameRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.ChangeDisplayNameResponse> __Marshaller_blizkie_family_v1_ChangeDisplayNameResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.ChangeDisplayNameResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.UpdateFamilyNameRequest> __Marshaller_blizkie_family_v1_UpdateFamilyNameRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.UpdateFamilyNameRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.UpdateFamilyNameResponse> __Marshaller_blizkie_family_v1_UpdateFamilyNameResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.UpdateFamilyNameResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.DeleteFamilyRequest> __Marshaller_blizkie_family_v1_DeleteFamilyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.DeleteFamilyRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.DeleteFamilyResponse> __Marshaller_blizkie_family_v1_DeleteFamilyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.DeleteFamilyResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.RevokeInviteRequest> __Marshaller_blizkie_family_v1_RevokeInviteRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.RevokeInviteRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.Family.V1.RevokeInviteResponse> __Marshaller_blizkie_family_v1_RevokeInviteResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.Family.V1.RevokeInviteResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Blizkie.Family.V1.CreateFamilyRequest, global::Blizkie.Family.V1.CreateFamilyResponse> __Method_CreateFamily = new grpc::Method<global::Blizkie.Family.V1.CreateFamilyRequest, global::Blizkie.Family.V1.CreateFamilyResponse>(
@@ -94,6 +122,62 @@ namespace Blizkie.Family.V1 {
         __Marshaller_blizkie_family_v1_JoinFamilyRequest,
         __Marshaller_blizkie_family_v1_JoinFamilyResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.LeaveFamilyRequest, global::Blizkie.Family.V1.LeaveFamilyResponse> __Method_LeaveFamily = new grpc::Method<global::Blizkie.Family.V1.LeaveFamilyRequest, global::Blizkie.Family.V1.LeaveFamilyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LeaveFamily",
+        __Marshaller_blizkie_family_v1_LeaveFamilyRequest,
+        __Marshaller_blizkie_family_v1_LeaveFamilyResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.KickMemberRequest, global::Blizkie.Family.V1.KickMemberResponse> __Method_KickMember = new grpc::Method<global::Blizkie.Family.V1.KickMemberRequest, global::Blizkie.Family.V1.KickMemberResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "KickMember",
+        __Marshaller_blizkie_family_v1_KickMemberRequest,
+        __Marshaller_blizkie_family_v1_KickMemberResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.ChangeMemberRoleRequest, global::Blizkie.Family.V1.ChangeMemberRoleResponse> __Method_ChangeMemberRole = new grpc::Method<global::Blizkie.Family.V1.ChangeMemberRoleRequest, global::Blizkie.Family.V1.ChangeMemberRoleResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ChangeMemberRole",
+        __Marshaller_blizkie_family_v1_ChangeMemberRoleRequest,
+        __Marshaller_blizkie_family_v1_ChangeMemberRoleResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.ChangeDisplayNameRequest, global::Blizkie.Family.V1.ChangeDisplayNameResponse> __Method_ChangeDisplayName = new grpc::Method<global::Blizkie.Family.V1.ChangeDisplayNameRequest, global::Blizkie.Family.V1.ChangeDisplayNameResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ChangeDisplayName",
+        __Marshaller_blizkie_family_v1_ChangeDisplayNameRequest,
+        __Marshaller_blizkie_family_v1_ChangeDisplayNameResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.UpdateFamilyNameRequest, global::Blizkie.Family.V1.UpdateFamilyNameResponse> __Method_UpdateFamilyName = new grpc::Method<global::Blizkie.Family.V1.UpdateFamilyNameRequest, global::Blizkie.Family.V1.UpdateFamilyNameResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateFamilyName",
+        __Marshaller_blizkie_family_v1_UpdateFamilyNameRequest,
+        __Marshaller_blizkie_family_v1_UpdateFamilyNameResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.DeleteFamilyRequest, global::Blizkie.Family.V1.DeleteFamilyResponse> __Method_DeleteFamily = new grpc::Method<global::Blizkie.Family.V1.DeleteFamilyRequest, global::Blizkie.Family.V1.DeleteFamilyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteFamily",
+        __Marshaller_blizkie_family_v1_DeleteFamilyRequest,
+        __Marshaller_blizkie_family_v1_DeleteFamilyResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.Family.V1.RevokeInviteRequest, global::Blizkie.Family.V1.RevokeInviteResponse> __Method_RevokeInvite = new grpc::Method<global::Blizkie.Family.V1.RevokeInviteRequest, global::Blizkie.Family.V1.RevokeInviteResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RevokeInvite",
+        __Marshaller_blizkie_family_v1_RevokeInviteRequest,
+        __Marshaller_blizkie_family_v1_RevokeInviteResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -124,6 +208,48 @@ namespace Blizkie.Family.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.JoinFamilyResponse> JoinFamily(global::Blizkie.Family.V1.JoinFamilyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.LeaveFamilyResponse> LeaveFamily(global::Blizkie.Family.V1.LeaveFamilyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.KickMemberResponse> KickMember(global::Blizkie.Family.V1.KickMemberRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.ChangeMemberRoleResponse> ChangeMemberRole(global::Blizkie.Family.V1.ChangeMemberRoleRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.ChangeDisplayNameResponse> ChangeDisplayName(global::Blizkie.Family.V1.ChangeDisplayNameRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.UpdateFamilyNameResponse> UpdateFamilyName(global::Blizkie.Family.V1.UpdateFamilyNameRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.DeleteFamilyResponse> DeleteFamily(global::Blizkie.Family.V1.DeleteFamilyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.Family.V1.RevokeInviteResponse> RevokeInvite(global::Blizkie.Family.V1.RevokeInviteRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -237,6 +363,146 @@ namespace Blizkie.Family.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_JoinFamily, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.LeaveFamilyResponse LeaveFamily(global::Blizkie.Family.V1.LeaveFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LeaveFamily(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.LeaveFamilyResponse LeaveFamily(global::Blizkie.Family.V1.LeaveFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LeaveFamily, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.LeaveFamilyResponse> LeaveFamilyAsync(global::Blizkie.Family.V1.LeaveFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LeaveFamilyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.LeaveFamilyResponse> LeaveFamilyAsync(global::Blizkie.Family.V1.LeaveFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LeaveFamily, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.KickMemberResponse KickMember(global::Blizkie.Family.V1.KickMemberRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return KickMember(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.KickMemberResponse KickMember(global::Blizkie.Family.V1.KickMemberRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_KickMember, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.KickMemberResponse> KickMemberAsync(global::Blizkie.Family.V1.KickMemberRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return KickMemberAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.KickMemberResponse> KickMemberAsync(global::Blizkie.Family.V1.KickMemberRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_KickMember, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.ChangeMemberRoleResponse ChangeMemberRole(global::Blizkie.Family.V1.ChangeMemberRoleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeMemberRole(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.ChangeMemberRoleResponse ChangeMemberRole(global::Blizkie.Family.V1.ChangeMemberRoleRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ChangeMemberRole, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.ChangeMemberRoleResponse> ChangeMemberRoleAsync(global::Blizkie.Family.V1.ChangeMemberRoleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeMemberRoleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.ChangeMemberRoleResponse> ChangeMemberRoleAsync(global::Blizkie.Family.V1.ChangeMemberRoleRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ChangeMemberRole, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.ChangeDisplayNameResponse ChangeDisplayName(global::Blizkie.Family.V1.ChangeDisplayNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeDisplayName(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.ChangeDisplayNameResponse ChangeDisplayName(global::Blizkie.Family.V1.ChangeDisplayNameRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ChangeDisplayName, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.ChangeDisplayNameResponse> ChangeDisplayNameAsync(global::Blizkie.Family.V1.ChangeDisplayNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeDisplayNameAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.ChangeDisplayNameResponse> ChangeDisplayNameAsync(global::Blizkie.Family.V1.ChangeDisplayNameRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ChangeDisplayName, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.UpdateFamilyNameResponse UpdateFamilyName(global::Blizkie.Family.V1.UpdateFamilyNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateFamilyName(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.UpdateFamilyNameResponse UpdateFamilyName(global::Blizkie.Family.V1.UpdateFamilyNameRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateFamilyName, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.UpdateFamilyNameResponse> UpdateFamilyNameAsync(global::Blizkie.Family.V1.UpdateFamilyNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateFamilyNameAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.UpdateFamilyNameResponse> UpdateFamilyNameAsync(global::Blizkie.Family.V1.UpdateFamilyNameRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateFamilyName, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.DeleteFamilyResponse DeleteFamily(global::Blizkie.Family.V1.DeleteFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteFamily(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.DeleteFamilyResponse DeleteFamily(global::Blizkie.Family.V1.DeleteFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteFamily, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.DeleteFamilyResponse> DeleteFamilyAsync(global::Blizkie.Family.V1.DeleteFamilyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteFamilyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.DeleteFamilyResponse> DeleteFamilyAsync(global::Blizkie.Family.V1.DeleteFamilyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteFamily, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.RevokeInviteResponse RevokeInvite(global::Blizkie.Family.V1.RevokeInviteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RevokeInvite(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.Family.V1.RevokeInviteResponse RevokeInvite(global::Blizkie.Family.V1.RevokeInviteRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RevokeInvite, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.RevokeInviteResponse> RevokeInviteAsync(global::Blizkie.Family.V1.RevokeInviteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RevokeInviteAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.Family.V1.RevokeInviteResponse> RevokeInviteAsync(global::Blizkie.Family.V1.RevokeInviteRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RevokeInvite, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override FamilyServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -254,7 +520,14 @@ namespace Blizkie.Family.V1 {
           .AddMethod(__Method_CreateFamily, serviceImpl.CreateFamily)
           .AddMethod(__Method_GetMyFamily, serviceImpl.GetMyFamily)
           .AddMethod(__Method_GenerateInviteCode, serviceImpl.GenerateInviteCode)
-          .AddMethod(__Method_JoinFamily, serviceImpl.JoinFamily).Build();
+          .AddMethod(__Method_JoinFamily, serviceImpl.JoinFamily)
+          .AddMethod(__Method_LeaveFamily, serviceImpl.LeaveFamily)
+          .AddMethod(__Method_KickMember, serviceImpl.KickMember)
+          .AddMethod(__Method_ChangeMemberRole, serviceImpl.ChangeMemberRole)
+          .AddMethod(__Method_ChangeDisplayName, serviceImpl.ChangeDisplayName)
+          .AddMethod(__Method_UpdateFamilyName, serviceImpl.UpdateFamilyName)
+          .AddMethod(__Method_DeleteFamily, serviceImpl.DeleteFamily)
+          .AddMethod(__Method_RevokeInvite, serviceImpl.RevokeInvite).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -268,6 +541,13 @@ namespace Blizkie.Family.V1 {
       serviceBinder.AddMethod(__Method_GetMyFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.GetMyFamilyRequest, global::Blizkie.Family.V1.GetMyFamilyResponse>(serviceImpl.GetMyFamily));
       serviceBinder.AddMethod(__Method_GenerateInviteCode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.GenerateInviteCodeRequest, global::Blizkie.Family.V1.GenerateInviteCodeResponse>(serviceImpl.GenerateInviteCode));
       serviceBinder.AddMethod(__Method_JoinFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.JoinFamilyRequest, global::Blizkie.Family.V1.JoinFamilyResponse>(serviceImpl.JoinFamily));
+      serviceBinder.AddMethod(__Method_LeaveFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.LeaveFamilyRequest, global::Blizkie.Family.V1.LeaveFamilyResponse>(serviceImpl.LeaveFamily));
+      serviceBinder.AddMethod(__Method_KickMember, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.KickMemberRequest, global::Blizkie.Family.V1.KickMemberResponse>(serviceImpl.KickMember));
+      serviceBinder.AddMethod(__Method_ChangeMemberRole, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.ChangeMemberRoleRequest, global::Blizkie.Family.V1.ChangeMemberRoleResponse>(serviceImpl.ChangeMemberRole));
+      serviceBinder.AddMethod(__Method_ChangeDisplayName, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.ChangeDisplayNameRequest, global::Blizkie.Family.V1.ChangeDisplayNameResponse>(serviceImpl.ChangeDisplayName));
+      serviceBinder.AddMethod(__Method_UpdateFamilyName, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.UpdateFamilyNameRequest, global::Blizkie.Family.V1.UpdateFamilyNameResponse>(serviceImpl.UpdateFamilyName));
+      serviceBinder.AddMethod(__Method_DeleteFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.DeleteFamilyRequest, global::Blizkie.Family.V1.DeleteFamilyResponse>(serviceImpl.DeleteFamily));
+      serviceBinder.AddMethod(__Method_RevokeInvite, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.Family.V1.RevokeInviteRequest, global::Blizkie.Family.V1.RevokeInviteResponse>(serviceImpl.RevokeInvite));
     }
 
   }

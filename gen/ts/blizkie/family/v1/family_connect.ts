@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFamilyRequest, CreateFamilyResponse, GenerateInviteCodeRequest, GenerateInviteCodeResponse, GetMyFamilyRequest, GetMyFamilyResponse, JoinFamilyRequest, JoinFamilyResponse } from "./family_pb.js";
+import { ChangeDisplayNameRequest, ChangeDisplayNameResponse, ChangeMemberRoleRequest, ChangeMemberRoleResponse, CreateFamilyRequest, CreateFamilyResponse, DeleteFamilyRequest, DeleteFamilyResponse, GenerateInviteCodeRequest, GenerateInviteCodeResponse, GetMyFamilyRequest, GetMyFamilyResponse, JoinFamilyRequest, JoinFamilyResponse, KickMemberRequest, KickMemberResponse, LeaveFamilyRequest, LeaveFamilyResponse, RevokeInviteRequest, RevokeInviteResponse, UpdateFamilyNameRequest, UpdateFamilyNameResponse } from "./family_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,69 @@ export const FamilyService = {
       name: "JoinFamily",
       I: JoinFamilyRequest,
       O: JoinFamilyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.LeaveFamily
+     */
+    leaveFamily: {
+      name: "LeaveFamily",
+      I: LeaveFamilyRequest,
+      O: LeaveFamilyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.KickMember
+     */
+    kickMember: {
+      name: "KickMember",
+      I: KickMemberRequest,
+      O: KickMemberResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.ChangeMemberRole
+     */
+    changeMemberRole: {
+      name: "ChangeMemberRole",
+      I: ChangeMemberRoleRequest,
+      O: ChangeMemberRoleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.ChangeDisplayName
+     */
+    changeDisplayName: {
+      name: "ChangeDisplayName",
+      I: ChangeDisplayNameRequest,
+      O: ChangeDisplayNameResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.UpdateFamilyName
+     */
+    updateFamilyName: {
+      name: "UpdateFamilyName",
+      I: UpdateFamilyNameRequest,
+      O: UpdateFamilyNameResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.DeleteFamily
+     */
+    deleteFamily: {
+      name: "DeleteFamily",
+      I: DeleteFamilyRequest,
+      O: DeleteFamilyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.family.v1.FamilyService.RevokeInvite
+     */
+    revokeInvite: {
+      name: "RevokeInvite",
+      I: RevokeInviteRequest,
+      O: RevokeInviteResponse,
       kind: MethodKind.Unary,
     },
   }

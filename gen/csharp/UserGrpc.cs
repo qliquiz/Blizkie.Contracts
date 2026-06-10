@@ -49,6 +49,10 @@ namespace Blizkie.User.V1 {
     static readonly grpc::Marshaller<global::Blizkie.User.V1.SyncUserRequest> __Marshaller_blizkie_user_v1_SyncUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.User.V1.SyncUserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Blizkie.User.V1.SyncUserResponse> __Marshaller_blizkie_user_v1_SyncUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.User.V1.SyncUserResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.User.V1.UpdateProfileRequest> __Marshaller_blizkie_user_v1_UpdateProfileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.User.V1.UpdateProfileRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Blizkie.User.V1.UpdateProfileResponse> __Marshaller_blizkie_user_v1_UpdateProfileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Blizkie.User.V1.UpdateProfileResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Blizkie.User.V1.SyncUserRequest, global::Blizkie.User.V1.SyncUserResponse> __Method_SyncUser = new grpc::Method<global::Blizkie.User.V1.SyncUserRequest, global::Blizkie.User.V1.SyncUserResponse>(
@@ -57,6 +61,14 @@ namespace Blizkie.User.V1 {
         "SyncUser",
         __Marshaller_blizkie_user_v1_SyncUserRequest,
         __Marshaller_blizkie_user_v1_SyncUserResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Blizkie.User.V1.UpdateProfileRequest, global::Blizkie.User.V1.UpdateProfileResponse> __Method_UpdateProfile = new grpc::Method<global::Blizkie.User.V1.UpdateProfileRequest, global::Blizkie.User.V1.UpdateProfileResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateProfile",
+        __Marshaller_blizkie_user_v1_UpdateProfileRequest,
+        __Marshaller_blizkie_user_v1_UpdateProfileResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -70,6 +82,12 @@ namespace Blizkie.User.V1 {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Blizkie.User.V1.SyncUserResponse> SyncUser(global::Blizkie.User.V1.SyncUserRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Blizkie.User.V1.UpdateProfileResponse> UpdateProfile(global::Blizkie.User.V1.UpdateProfileRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -123,6 +141,26 @@ namespace Blizkie.User.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_SyncUser, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.User.V1.UpdateProfileResponse UpdateProfile(global::Blizkie.User.V1.UpdateProfileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateProfile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Blizkie.User.V1.UpdateProfileResponse UpdateProfile(global::Blizkie.User.V1.UpdateProfileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateProfile, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.User.V1.UpdateProfileResponse> UpdateProfileAsync(global::Blizkie.User.V1.UpdateProfileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateProfileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Blizkie.User.V1.UpdateProfileResponse> UpdateProfileAsync(global::Blizkie.User.V1.UpdateProfileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateProfile, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override UserServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -137,7 +175,8 @@ namespace Blizkie.User.V1 {
     public static grpc::ServerServiceDefinition BindService(UserServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SyncUser, serviceImpl.SyncUser).Build();
+          .AddMethod(__Method_SyncUser, serviceImpl.SyncUser)
+          .AddMethod(__Method_UpdateProfile, serviceImpl.UpdateProfile).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -148,6 +187,7 @@ namespace Blizkie.User.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SyncUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.User.V1.SyncUserRequest, global::Blizkie.User.V1.SyncUserResponse>(serviceImpl.SyncUser));
+      serviceBinder.AddMethod(__Method_UpdateProfile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Blizkie.User.V1.UpdateProfileRequest, global::Blizkie.User.V1.UpdateProfileResponse>(serviceImpl.UpdateProfile));
     }
 
   }

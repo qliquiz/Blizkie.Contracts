@@ -98,3 +98,83 @@ export class SyncUserResponse extends Message<SyncUserResponse> {
   }
 }
 
+/**
+ * @generated from message blizkie.user.v1.UpdateProfileRequest
+ */
+export class UpdateProfileRequest extends Message<UpdateProfileRequest> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string avatar_url = 2;
+   */
+  avatarUrl = "";
+
+  constructor(data?: PartialMessage<UpdateProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.user.v1.UpdateProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateProfileRequest {
+    return new UpdateProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateProfileRequest {
+    return new UpdateProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateProfileRequest {
+    return new UpdateProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateProfileRequest | PlainMessage<UpdateProfileRequest> | undefined, b: UpdateProfileRequest | PlainMessage<UpdateProfileRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message blizkie.user.v1.UpdateProfileResponse
+ */
+export class UpdateProfileResponse extends Message<UpdateProfileResponse> {
+  /**
+   * @generated from field: string message = 1;
+   */
+  message = "";
+
+  constructor(data?: PartialMessage<UpdateProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "blizkie.user.v1.UpdateProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateProfileResponse {
+    return new UpdateProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateProfileResponse {
+    return new UpdateProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateProfileResponse {
+    return new UpdateProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateProfileResponse | PlainMessage<UpdateProfileResponse> | undefined, b: UpdateProfileResponse | PlainMessage<UpdateProfileResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateProfileResponse, a, b);
+  }
+}
+

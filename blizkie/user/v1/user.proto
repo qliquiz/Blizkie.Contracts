@@ -13,6 +13,13 @@ service UserService {
       body: "*"
     };
   }
+
+  rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {
+    option (google.api.http) = {
+      patch: "/api/v1/users/me/profile"
+      body: "*"
+    };
+  }
 }
 
 message SyncUserRequest {
@@ -23,5 +30,14 @@ message SyncUserRequest {
 }
 
 message SyncUserResponse {
+  string message = 1;
+}
+
+message UpdateProfileRequest {
+  string name = 1;
+  string avatar_url = 2;
+}
+
+message UpdateProfileResponse {
   string message = 1;
 }

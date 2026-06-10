@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SyncUserRequest, SyncUserResponse } from "./user_pb.js";
+import { SyncUserRequest, SyncUserResponse, UpdateProfileRequest, UpdateProfileResponse } from "./user_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,6 +19,15 @@ export const UserService = {
       name: "SyncUser",
       I: SyncUserRequest,
       O: SyncUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc blizkie.user.v1.UserService.UpdateProfile
+     */
+    updateProfile: {
+      name: "UpdateProfile",
+      I: UpdateProfileRequest,
+      O: UpdateProfileResponse,
       kind: MethodKind.Unary,
     },
   }

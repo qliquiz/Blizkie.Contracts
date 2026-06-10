@@ -144,8 +144,7 @@ type LoginRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Temporary login field: phone or email.
-	Phone    string `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
+	Phone    string `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"` // login field: phone or email
 	Password string `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	DeviceId string `protobuf:"bytes,3,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
 }

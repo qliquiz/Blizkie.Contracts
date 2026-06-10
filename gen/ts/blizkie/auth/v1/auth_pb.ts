@@ -103,7 +103,7 @@ export class RegisterResponse extends Message<RegisterResponse> {
  */
 export class LoginRequest extends Message<LoginRequest> {
   /**
-   * Temporary login field: phone or email.
+   * login field: phone or email
    *
    * @generated from field: string phone = 1;
    */

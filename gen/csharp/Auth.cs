@@ -709,7 +709,7 @@ namespace Blizkie.Auth.V1 {
     public const int PhoneFieldNumber = 1;
     private string phone_ = "";
     /// <summary>
-    /// Temporary login field: phone or email.
+    /// login field: phone or email
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
